@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zenora | Premium Yoga & Meditation Studio</title>
+    <meta name="description"
+        content="Zenora is a calm, premium yoga and meditation studio. Find your balance, feel your peace." />
+    <link rel="icon" type="image/png" href="images/logo%201.png" />
+
+    <!-- Apply saved theme + direction before paint (prevents flash) -->
+    <script>
+        try {
+            var t = localStorage.getItem("zenora-theme");
+            var d = localStorage.getItem("zenora-dir");
+            if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+            if (d === "rtl") document.documentElement.setAttribute("dir", "rtl");
+        } catch (e) { }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="home-2.css" />
+</head>
+
+<body>
+
+    <!-- ================= HEADER (3 equal-gap divs) ================= -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+
+            <!-- DIV 1: Logo + brand name + tagline -->
+            <div class="header-brand">
+                <a href="index.html" class="brand" aria-label="Zenora home">
+                    <img class="brand-logo" src="images/logo%201.png" alt="" />
+                    <span class="brand-text">
+                        <span class="brand-name">Zenora</span>
+                        <span class="brand-tagline">Find Your Balance. Feel Your Peace</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- DIV 2: Navigation links -->
+            <nav class="nav" id="nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li class="has-dropdown">
+                        <a href="index.html" class="active" aria-haspopup="true">Home <i data-lucide="chevron-down"
+                                class="dd-icon"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html">Home 1 <small>Classic</small></a></li>
+                            <li><a href="home-2.html" class="current">Home 2 <small>Premium</small></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="instructors.html">Instructors</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-cta-item"><a href="login.html" class="btn btn-primary">Member Login</a></li>
+                </ul>
+            </nav>
+
+            <!-- DIV 3: Action buttons + the single CTA -->
+            <div class="header-actions">
+                <button class="icon-btn" id="rtlToggle" aria-label="Toggle right-to-left layout" title="RTL / LTR">
+                    <i data-lucide="arrow-left-right"></i>
+                </button>
+                <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary header-cta">Member Login</a>
+                <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= 1. HERO (full-bleed, centered, fills viewport) ================= -->
+        <section class="h2-hero" id="hero">
+            <div class="h2-hero-bg" id="heroBg">
+                <img src="https://images.pexels.com/photos/3822139/pexels-photo-3822139.jpeg?auto=compress&cs=tinysrgb&w=1800"
+                    alt="" onerror="this.style.display='none'" />
+            </div>
+            <div class="h2-hero-overlay"></div>
+            
+
+            <div class="container h2-hero-content">
+                <span class="h2-pill h2-fade" style="--d:.1s"><i data-lucide="sparkles"></i> Premium Yoga & Meditation
+                    Studio</span>
+                <h1 class="h2-fade" style="--d:.25s">
+                    <span class="h2-line">Find your</span>
+                    <span class="h2-line"><span class="rot" id="rotator">
+                            <span class="active">balance</span>
+                            <span>stillness</span>
+                            <span>strength</span>
+                            <span>peace</span>
+                        </span></span>
+                </h1>
+                <p class="h2-hero-lead h2-fade" style="--d:.4s">
+                    Step into a sanctuary of slow movement, deep breath and quiet focus. Mindful classes, guided by
+                    caring teachers, in a studio designed for calm.
+                </p>
+                <div class="btn-row h2-fade" style="--d:.55s">
+                    <a href="classes.html" class="btn btn-light">Book a Class <i data-lucide="arrow-right"
+                            class="flip"></i></a>
+                    <a href="#about" class="btn btn-ghost"><i data-lucide="play-circle"></i> Discover Zenora</a>
+                </div>
+            </div>
+
+            <!-- glass info bar -->
+            <div class="container">
+                <div class="h2-glass h2-fade" style="--d:.7s">
+                    <div class="glass-item">
+                        <span class="glass-icon"><i data-lucide="sunrise"></i></span>
+                        <div><small>Next class</small><strong>Morning Flow · 6:30 AM</strong></div>
+                    </div>
+                    <div class="glass-item">
+                        <span class="glass-icon"><i data-lucide="users"></i></span>
+                        <div><small>Small groups</small><strong>Max 12 per class</strong></div>
+                    </div>
+                    <div class="glass-item">
+                        <span class="glass-icon"><i data-lucide="map-pin"></i></span>
+                        <div><small>Studio</small><strong>Banjara Hills</strong></div>
+                    </div>
+                    <a href="membership.html" class="glass-cta">Join Today <i data-lucide="arrow-up-right"></i></a>
+                </div>
+            </div>
+
+            
+        </section>
+
+        <!-- ================= 2. ABOUT (image collage) ================= -->
+        <section class="section" id="about">
+            <div class="container h2-about">
+                <div class="collage reveal">
+                    <div class="collage-main img-frame">
+                        <img src="./images/meditation1.jpg"
+                            alt="Calm minimalist yoga studio with soft natural light" loading="lazy"
+                            onerror="this.style.display='none'" />
+                    </div>
+                    <div class="collage-small img-frame">
+                        <img src="https://images.pexels.com/photos/4534605/pexels-photo-4534605.jpeg?auto=compress&cs=tinysrgb&w=700"
+                            alt="Yoga practice in a bright indoor space" loading="lazy"
+                            onerror="this.style.display='none'" />
+                    </div>
+                    <div class="collage-badge">
+                        <strong>10+</strong>
+                        <span>Years of mindful practice</span>
+                    </div>
+                    <span class="collage-ring"></span>
+                </div>
+
+                <div class="about-text reveal" style="--d:.15s">
+                    <span class="eyebrow">Our Philosophy</span>
+                    <h2>Slow down. <em>Come home</em> to yourself.</h2>
+                    <p>Zenora is a studio built around stillness. Soft light, natural textures and small groups
+                        create the space you need to breathe, listen and reset.</p>
+                    <div class="feature-grid">
+                        <div class="feature">
+                            <span class="f-icon"><i data-lucide="leaf"></i></span>
+                            <div><h4>Natural spaces</h4><p>Calming interiors and organic materials.</p></div>
+                        </div>
+                        <div class="feature">
+                            <span class="f-icon"><i data-lucide="heart"></i></span>
+                            <div><h4>Warm community</h4><p>A judgement-free circle of practitioners.</p></div>
+                        </div>
+                        <div class="feature">
+                            <span class="f-icon"><i data-lucide="sparkles"></i></span>
+                            <div><h4>Guided journeys</h4><p>Classes designed to build week by week.</p></div>
+                        </div>
+                        <div class="feature">
+                            <span class="f-icon"><i data-lucide="shield-check"></i></span>
+                            <div><h4>Safe practice</h4><p>Certified teachers who adapt to you.</p></div>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-primary">Learn Our Story <i data-lucide="arrow-right"
+                            class="flip"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 3. SERVICES (expanding panels) ================= -->
+        <section class="section alt" id="services">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">What We Offer</span>
+                    <h2>Practices crafted for <em>your well-being</em></h2>
+                    <p>Hover or tap a panel to explore each service.</p>
+                </div>
+
+                <div class="panels reveal" id="panels">
+                    <article class="panel active" tabindex="0">
+                        <img class="panel-image" src="images/group class1.jpg" alt="" loading="lazy" />
+                        <span class="panel-num">01</span>
+                        <span class="panel-icon"><i data-lucide="users"></i></span>
+                        <div class="panel-body">
+                            <h3>Group Classes</h3>
+                            <p>Daily yoga and meditation for every style and level in a warm, small-group setting.</p>
+                            <a href="services.html" class="link-arrow">Learn more <i data-lucide="arrow-right"
+                                    class="flip"></i></a>
+                        </div>
+                    </article>
+                    <article class="panel" tabindex="0">
+                        <img class="panel-image" src="images/hatha yoga.jpg" alt="" loading="lazy" />
+                        <span class="panel-num">02</span>
+                        <span class="panel-icon"><i data-lucide="user-round"></i></span>
+                        <div class="panel-body">
+                            <h3>Private Sessions</h3>
+                            <p>One-to-one practice tailored to your goals, body and pace with a dedicated teacher.</p>
+                            <a href="services.html" class="link-arrow">Learn more <i data-lucide="arrow-right"
+                                    class="flip"></i></a>
+                        </div>
+                    </article>
+                    <article class="panel" tabindex="0">
+                        <img class="panel-image" src="images/meditation.jpg" alt="" loading="lazy" />
+                        <span class="panel-num">03</span>
+                        <span class="panel-icon"><i data-lucide="flower-2"></i></span>
+                        <div class="panel-body">
+                            <h3>Guided Meditation</h3>
+                            <p>Quiet the mind with mindfulness, body scans and compassion practices.</p>
+                            <a href="services.html" class="link-arrow">Learn more <i data-lucide="arrow-right"
+                                    class="flip"></i></a>
+                        </div>
+                    </article>
+                    <article class="panel" tabindex="0">
+                        <img class="panel-image" src="images/yin yoga.jpg" alt="" loading="lazy" />
+                        <span class="panel-num">04</span>
+                        <span class="panel-icon"><i data-lucide="wind"></i></span>
+                        <div class="panel-body">
+                            <h3>Breathwork</h3>
+                            <p>Simple, powerful breathing techniques to reduce stress and restore energy.</p>
+                            <a href="services.html" class="link-arrow">Learn more <i data-lucide="arrow-right"
+                                    class="flip"></i></a>
+                        </div>
+                    </article>
+                    <article class="panel" tabindex="0">
+                        <img class="panel-image" src="images/group.jpg" alt="" loading="lazy" />
+                        <span class="panel-num">05</span>
+                        <span class="panel-icon"><i data-lucide="calendar-days"></i></span>
+                        <div class="panel-body">
+                            <h3>Workshops & Retreats</h3>
+                            <p>Weekend deep-dives and seasonal retreats to reset, recharge and learn.</p>
+                            <a href="services.html" class="link-arrow">Learn more <i data-lucide="arrow-right"
+                                    class="flip"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 4. WEEKLY SCHEDULE (day tabs) ================= -->
+        <section class="section" id="schedule">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Weekly Schedule</span>
+                    <h2>Plan your week of <em>mindful movement</em></h2>
+                    <p>Pick a day and see what is on the mat.</p>
+                </div>
+
+                <div class="days reveal" id="days" role="tablist" aria-label="Choose a day"></div>
+                <div class="schedule reveal" id="schedule-list" aria-live="polite"></div>
+
+                <div class="center-row reveal">
+                    <a href="classes.html" class="btn btn-secondary">View All Classes</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 5. STATS (parallax band) ================= -->
+        <section class="band" id="experience">
+            <div class="band-bg"></div>
+            <div class="container">
+                <div class="section-head reveal light">
+                    <span class="eyebrow">The Zenora Experience</span>
+                    <h2>A practice that <em>grows with you</em></h2>
+                </div>
+                <div class="band-stats">
+                    <div class="b-stat reveal"><i data-lucide="smile"></i><strong><span
+                                data-count="5000">0</span>+</strong><span>Happy members</span></div>
+                    <div class="b-stat reveal" style="--d:.1s"><i data-lucide="calendar-check"></i><strong><span
+                                data-count="45">0</span>+</strong><span>Weekly classes</span></div>
+                    <div class="b-stat reveal" style="--d:.2s"><i data-lucide="award"></i><strong><span
+                                data-count="12">0</span></strong><span>Expert instructors</span></div>
+                    <div class="b-stat reveal" style="--d:.3s"><i data-lucide="sun"></i><strong><span
+                                data-count="10">0</span>+</strong><span>Years of practice</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 6. INSTRUCTORS (overlay cards) ================= -->
+        <section class="section" id="instructors">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Our Teachers</span>
+                    <h2>Guided by <em>experienced, caring</em> instructors</h2>
+                    <p>Certified teachers who listen, adapt and help you practice safely and joyfully.</p>
+                </div>
+                <div class="grid grid-4">
+                    <article class="coach tap-card reveal">
+                        <img src="https://i.pravatar.cc/600?img=47" alt="Portrait of instructor Aanya Rao"
+                            loading="lazy" onerror="this.style.display='none'" />
+                        <div class="coach-info">
+                            <h3>Aanya Rao</h3>
+                            <span>Hatha & Yin · 500-hr RYT</span>
+                            <p>Slow, restorative practice for deep release.</p>
+                            <div class="coach-social"><i data-lucide="instagram"></i><i data-lucide="youtube"></i></div>
+                        </div>
+                    </article>
+                    <article class="coach tap-card reveal" style="--d:.1s">
+                        <img src="https://i.pravatar.cc/600?img=12" alt="Portrait of instructor Kabir Mehta"
+                            loading="lazy" onerror="this.style.display='none'" />
+                        <div class="coach-info">
+                            <h3>Kabir Mehta</h3>
+                            <span>Vinyasa & Power · 300-hr RYT</span>
+                            <p>Dynamic flows that build strength and focus.</p>
+                            <div class="coach-social"><i data-lucide="instagram"></i><i data-lucide="youtube"></i></div>
+                        </div>
+                    </article>
+                    <article class="coach tap-card reveal" style="--d:.2s">
+                        <img src="https://i.pravatar.cc/600?img=49" alt="Portrait of instructor Meera Nair"
+                            loading="lazy" onerror="this.style.display='none'" />
+                        <div class="coach-info">
+                            <h3>Meera Nair</h3>
+                            <span>Meditation & Breathwork</span>
+                            <p>Calm the mind with simple, lasting techniques.</p>
+                            <div class="coach-social"><i data-lucide="instagram"></i><i data-lucide="youtube"></i></div>
+                        </div>
+                    </article>
+                    <article class="coach tap-card reveal" style="--d:.3s">
+                        <img src="https://i.pravatar.cc/600?img=33" alt="Portrait of instructor Rohan Iyer"
+                            loading="lazy" onerror="this.style.display='none'" />
+                        <div class="coach-info">
+                            <h3>Rohan Iyer</h3>
+                            <span>Ashtanga · 500-hr RYT</span>
+                            <p>Structured sequences for discipline and endurance.</p>
+                            <div class="coach-social"><i data-lucide="instagram"></i><i data-lucide="youtube"></i></div>
+                        </div>
+                    </article>
+                </div>
+                <div class="center-row reveal">
+                    <a href="instructors.html" class="btn btn-secondary">Meet All Instructors</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 7. MEMBERSHIP (pricing toggle) ================= -->
+        <section class="section alt" id="pricing">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Membership Plans</span>
+                    <h2>Simple plans for <em>every rhythm</em></h2>
+                    <p>Switch the Unlimited plan between monthly and yearly billing.</p>
+                </div>
+
+                <div class="toggle-wrap reveal">
+                    <span class="t-label active" id="tMonthly">Monthly</span>
+                    <button class="switch" id="billSwitch" role="switch" aria-checked="false"
+                        aria-label="Toggle yearly billing"><span class="knob"></span></button>
+                    <span class="t-label" id="tYearly">Yearly <em class="save">Save 21%</em></span>
+                </div>
+
+                <div class="grid grid-3 pricing">
+                    <article class="plan tap-card reveal">
+                        <h3>Class Pack</h3>
+                        <p class="plan-desc">10 classes, valid for 3 months</p>
+                        <div class="price"><span>$</span>140<small>/ pack</small></div>
+                        <ul>
+                            <li><i data-lucide="check"></i> Any group class</li>
+                            <li><i data-lucide="check"></i> Easy online booking</li>
+                            <li><i data-lucide="check"></i> Pack usage tracking</li>
+                            <li><i data-lucide="check"></i> Share with a friend</li>
+                        </ul>
+                        <a href="login.html" class="btn btn-secondary">Choose Plan</a>
+                    </article>
+
+                    <article class="plan popular tap-card reveal" style="--d:.1s">
+                        <span class="popular-badge">Most Popular</span>
+                        <h3>Unlimited</h3>
+                        <p class="plan-desc" id="unlimitedDesc">Unlimited classes, billed monthly</p>
+                        <div class="price"><span>$</span><b id="unlimitedPrice">95</b><small
+                                id="unlimitedUnit">/ month</small></div>
+                        <ul>
+                            <li><i data-lucide="check"></i> Unlimited group classes</li>
+                            <li><i data-lucide="check"></i> Priority slot booking</li>
+                            <li><i data-lucide="check"></i> 1 free guest pass monthly</li>
+                            <li><i data-lucide="check"></i> Flexible auto-renewal</li>
+                        </ul>
+                        <a href="login.html" class="btn btn-primary">Choose Plan</a>
+                    </article>
+
+                    <article class="plan tap-card reveal" style="--d:.2s">
+                        <h3>Private Pack</h3>
+                        <p class="plan-desc">Four one-to-one sessions</p>
+                        <div class="price"><span>$</span>320<small>/ pack</small></div>
+                        <ul>
+                            <li><i data-lucide="check"></i> Personalised practice plan</li>
+                            <li><i data-lucide="check"></i> Choose your teacher</li>
+                            <li><i data-lucide="check"></i> Flexible scheduling</li>
+                            <li><i data-lucide="check"></i> Progress notes</li>
+                        </ul>
+                        <a href="login.html" class="btn btn-secondary">Choose Plan</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 8. TESTIMONIALS (slider) ================= -->
+        <section class="section" id="testimonials">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">Kind Words</span>
+                    <h2>Voices from our <em>community</em></h2>
+                </div>
+
+                <div class="slider reveal" id="slider">
+                    <i data-lucide="quote" class="slider-quote"></i>
+                    <div class="slides">
+                        <figure class="slide active">
+                            <blockquote>Zenora is the one hour in my week where I truly switch off. The teachers are
+                                warm and the space feels like a deep breath.</blockquote>
+                            <figcaption><span class="avatar">SP</span>
+                                <div><strong>Sneha P.</strong><small>Member for 2 years</small></div>
+                            </figcaption>
+                        </figure>
+                        <figure class="slide">
+                            <blockquote>As a complete beginner I was nervous, but the Hatha class made me feel welcome
+                                from the first minute. I am hooked.</blockquote>
+                            <figcaption><span class="avatar">AK</span>
+                                <div><strong>Arjun K.</strong><small>Member for 6 months</small></div>
+                            </figcaption>
+                        </figure>
+                        <figure class="slide">
+                            <blockquote>Booking slots and tracking my class pack on the dashboard makes everything
+                                effortless. My stress levels have dropped noticeably.</blockquote>
+                            <figcaption><span class="avatar">RN</span>
+                                <div><strong>Riya N.</strong><small>Member for 1 year</small></div>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="slider-nav">
+                        <button class="icon-btn" id="prevSlide" aria-label="Previous testimonial"><i
+                                data-lucide="arrow-left" class="flip"></i></button>
+                        <div class="dots" id="dots"></div>
+                        <button class="icon-btn" id="nextSlide" aria-label="Next testimonial"><i
+                                data-lucide="arrow-right" class="flip"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 9. JOIN CTA + NEWSLETTER ================= -->
+        <section class="section join" id="join">
+            <div class="container">
+                <div class="join-box reveal">
+                    <span class="join-ring r1"></span>
+                    <span class="join-ring r2"></span>
+                    <div class="join-text">
+                        <span class="eyebrow light">Member Portal</span>
+                        <h2>Begin your practice <em>today</em></h2>
+                        <p>Book slots, track your pack, view sessions and manage renewals from one calm dashboard.</p>
+                        <div class="btn-row">
+                            <a href="login.html" class="btn btn-light">Member Login</a>
+                            <a href="membership.html" class="btn btn-ghost">Become a Member</a>
+                        </div>
+                    </div>
+                    <div class="join-news">
+                        <h3>Studio notes, once a month</h3>
+                        <p>Class updates, retreat dates and gentle practices in your inbox.</p>
+                        <form class="news-form" id="newsForm" novalidate>
+                            <input type="email" id="newsEmail" placeholder="Your email address"
+                                aria-label="Email address" required />
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                        <small class="news-msg" id="newsMsg" role="status"></small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand" aria-label="Zenora home">
+                    <img class="brand-logo" src="images/logo%201.png" alt="" />
+                    <span class="brand-text">
+                        <span class="brand-name">Zenora</span>
+                        <span class="brand-tagline">Find Your Balance. Feel Your Peace</span>
+                    </span>
+                </a>
+                <p>A calm, welcoming yoga and meditation studio for every body and every level.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="instructors.html">Instructors</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Studio Hours</h4>
+                <ul class="footer-links plain">
+                    <li>Mon – Fri: 6:00 AM – 9:00 PM</li>
+                    <li>Saturday: 7:00 AM – 7:00 PM</li>
+                    <li>Sunday: 8:00 AM – 1:00 PM</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <ul class="footer-links plain">
+                    <li><i data-lucide="map-pin"></i> 24 Lotus Lane, Banjara Hills</li>
+                    <li><i data-lucide="phone"></i> +91 98765 43210</li>
+                    <li><i data-lucide="mail"></i> hello@zenora.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year">2026</span> Zenora. All rights reserved.</p>
+            <div class="legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Lucide icons (pinned version that includes social icons) -->
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <script src="home-2.js"></script>
+</body>
+
+</html>

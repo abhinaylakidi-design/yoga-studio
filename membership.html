@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Membership | Zenora Yoga & Meditation Studio</title>
+    <meta name="description"
+        content="Choose a Zenora membership: class packs, unlimited monthly or annual plans. Compare plans and find the one that fits your practice." />
+    <link rel="icon" type="image/png" href="images/logo%201.png" />
+
+    <!-- Apply saved theme + direction before paint (prevents flash) -->
+    <script>
+        try {
+            var t = localStorage.getItem("zenora-theme");
+            var d = localStorage.getItem("zenora-dir");
+            if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+            if (d === "rtl") document.documentElement.setAttribute("dir", "rtl");
+        } catch (e) { }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="membership.css" />
+</head>
+
+<body>
+
+    <!-- ================= HEADER (3 equal-gap divs) ================= -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+
+            <!-- DIV 1: Logo + brand name + tagline -->
+            <div class="header-brand">
+                <a href="index.html" class="brand" aria-label="Zenora home">
+                    <img class="brand-logo" src="images/logo%201.png" alt="" />
+                    <span class="brand-text">
+                        <span class="brand-name">Zenora</span>
+                        <span class="brand-tagline">Find Your Balance. Feel Your Peace</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- DIV 2: Navigation links -->
+            <nav class="nav" id="nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li class="has-dropdown">
+                        <a href="index.html" aria-haspopup="true">Home <i data-lucide="chevron-down"
+                                class="dd-icon"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html">Home 1 <small>Classic</small></a></li>
+                            <li><a href="home-2.html">Home 2 <small>Premium</small></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="instructors.html">Instructors</a></li>
+                    <li><a href="membership.html" class="active">Membership</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-cta-item"><a href="login.html" class="btn btn-primary">Member Login</a></li>
+                </ul>
+            </nav>
+
+            <!-- DIV 3: Action buttons + the single CTA -->
+            <div class="header-actions">
+                <button class="icon-btn" id="rtlToggle" aria-label="Toggle right-to-left layout" title="RTL / LTR">
+                    <i data-lucide="arrow-left-right"></i>
+                </button>
+                <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary header-cta">Member Login</a>
+                <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= 1. HERO (interactive 3D member card) ================= -->
+        <section class="mb-hero" id="top">
+            <span class="mb-rings" aria-hidden="true"></span>
+            <span class="mb-blob mb-blob-1"></span>
+            <span class="mb-blob mb-blob-2"></span>
+
+            <div class="container mb-hero-inner">
+                <div class="mb-hero-copy">
+                    <span class="eyebrow mb-fade" style="--d:.1s">Membership Plans</span>
+                    <h1 class="mb-fade" style="--d:.2s">Practice more. <span class="mb-accent">Pay less.</span> Feel
+                        better.</h1>
+                    <p class="mb-lead mb-fade" style="--d:.3s">
+                        Choose a class pack, go unlimited or commit for the year. Every plan includes mats, props and
+                        a community that feels like home.
+                    </p>
+                    <div class="mb-hero-btns mb-fade" style="--d:.4s">
+                        <a href="#plans" class="btn btn-primary">Compare Plans <i data-lucide="arrow-down"></i></a>
+                        <a href="#finder" class="btn btn-secondary">Find My Plan</a>
+                    </div>
+                    <ul class="mb-trust mb-fade" style="--d:.5s">
+                        <li><i data-lucide="shield-check"></i> No joining fee</li>
+                        <li><i data-lucide="refresh-cw"></i> Flexible renewal</li>
+                        <li><i data-lucide="gift"></i> Free guest pass</li>
+                    </ul>
+                </div>
+
+                <div class="mb-stage mb-fade" style="--d:.3s" id="mbStage">
+                    <span class="mb-bubble mb-bubble-1"><img src="./images/arm balance.jpg" alt=""
+                            onerror="this.style.display='none'" /></span>
+                    <span class="mb-bubble mb-bubble-2"><img src="./images/group class1.jpg" alt=""
+                            onerror="this.style.display='none'" /></span>
+                    <span class="mb-bubble mb-bubble-3"><img src="./images/meditation.jpg" alt=""
+                            onerror="this.style.display='none'" /></span>
+
+                    <div class="mb-card-wrap">
+                        <div class="mb-tilt" id="mbTilt">
+                            <div class="mb-card" id="mbCard" data-tier="pack">
+                                <span class="mb-sheen"></span>
+                                <div class="mb-card-top">
+                                    <span class="mb-card-brand">
+                                        <img src="images/logo%201.png" alt="" onerror="this.style.display='none'" />
+                                        <b>Zenora</b>
+                                    </span>
+                                    <span class="mb-card-badge" id="mbBadge">Class Pack</span>
+                                </div>
+                                <div class="mb-chip"><i></i><i></i><i></i></div>
+                                <div class="mb-card-mid">
+                                    <small>MEMBER</small>
+                                    <strong>Your Name</strong>
+                                </div>
+                                <div class="mb-card-bot">
+                                    <div><small>PLAN</small><b id="mbPlan">10 classes</b></div>
+                                    <div><small>VALID</small><b id="mbValid">3 months</b></div>
+                                    <div class="mb-card-price"><b id="mbPrice">$140</b><small id="mbPer">/ pack</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-tiers" id="mbTiers" role="tablist" aria-label="Preview a plan">
+                        <button class="mb-tier active" data-tier="pack" role="tab" aria-selected="true">Class
+                            Pack</button>
+                        <button class="mb-tier" data-tier="unlimited" role="tab"
+                            aria-selected="false">Unlimited</button>
+                        <button class="mb-tier" data-tier="annual" role="tab" aria-selected="false">Annual</button>
+                    </div>
+                    <ul class="mb-perks" id="mbPerks"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 2. BENEFITS ================= -->
+        <section class="section" id="benefits">
+            <div class="container">
+                <div class="section-head mb-reveal">
+                    <span class="eyebrow">Member Benefits</span>
+                    <h2>More than a class. A whole community.</h2>
+                    <p>Every membership is designed to make your practice simpler, more flexible and more rewarding.</p>
+                </div>
+                <div class="mb-benefits">
+                    <article class="mb-benefit mb-reveal">
+                        <span class="mb-b-icon"><i data-lucide="calendar-plus"></i></span>
+                        <h3>Easy online booking</h3>
+                        <p>Reserve and cancel classes in seconds from your member dashboard, on any device.</p>
+                    </article>
+                    <article class="mb-benefit mb-reveal" style="--d:.1s">
+                        <span class="mb-b-icon"><i data-lucide="layers"></i></span>
+                        <h3>Every style included</h3>
+                        <p>Hatha, Vinyasa, Yin, Ashtanga, meditation and breathwork. Explore them all.</p>
+                    </article>
+                    <article class="mb-benefit mb-reveal" style="--d:.2s">
+                        <span class="mb-b-icon"><i data-lucide="gauge"></i></span>
+                        <h3>Track your progress</h3>
+                        <p>See remaining classes, upcoming sessions and renewal dates at a glance.</p>
+                    </article>
+                    <article class="mb-benefit mb-reveal">
+                        <span class="mb-b-icon"><i data-lucide="gift"></i></span>
+                        <h3>Guest passes</h3>
+                        <p>Bring a friend along and share the calm with the people you care about.</p>
+                    </article>
+                    <article class="mb-benefit mb-reveal" style="--d:.1s">
+                        <span class="mb-b-icon"><i data-lucide="pause-circle"></i></span>
+                        <h3>Pause when life happens</h3>
+                        <p>Travelling or unwell? Annual members can pause for up to 30 days.</p>
+                    </article>
+                    <article class="mb-benefit mb-reveal" style="--d:.2s">
+                        <span class="mb-b-icon"><i data-lucide="ticket-percent"></i></span>
+                        <h3>Workshop discounts</h3>
+                        <p>Save on weekend workshops, retreats and private sessions with our teachers.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 3. PLANS ================= -->
+        <section class="section alt" id="plans">
+            <div class="container">
+                <div class="section-head mb-reveal">
+                    <span class="eyebrow">Choose Your Plan</span>
+                    <h2>Simple plans for every rhythm</h2>
+                    <p>No hidden fees. Upgrade, renew or switch plans anytime from your dashboard.</p>
+                </div>
+                <div class="mb-plans">
+                    <article class="mb-plan mb-reveal">
+                        <span class="mb-plan-icon"><i data-lucide="ticket"></i></span>
+                        <h3>Class Pack</h3>
+                        <p class="mb-plan-desc">10 classes, valid for 3 months</p>
+                        <div class="mb-price"><span>$</span>140<small>/ pack</small></div>
+                        <ul>
+                            <li><i data-lucide="check"></i> Any group class</li>
+                            <li><i data-lucide="check"></i> Easy online booking</li>
+                            <li><i data-lucide="check"></i> Pack usage tracking</li>
+                            <li><i data-lucide="check"></i> Share with a friend</li>
+                        </ul>
+                        <a href="login.html" class="btn btn-secondary">Choose Plan</a>
+                    </article>
+
+                    <article class="mb-plan mb-plan-pop mb-reveal" style="--d:.12s">
+                        <span class="mb-pop"><i data-lucide="star"></i> Most Popular</span>
+                        <span class="mb-plan-icon"><i data-lucide="infinity"></i></span>
+                        <h3>Unlimited Monthly</h3>
+                        <p class="mb-plan-desc">Unlimited classes every month</p>
+                        <div class="mb-price"><span>$</span>95<small>/ month</small></div>
+                        <ul>
+                            <li><i data-lucide="check"></i> Unlimited group classes</li>
+                            <li><i data-lucide="check"></i> Priority slot booking</li>
+                            <li><i data-lucide="check"></i> 1 free guest pass monthly</li>
+                            <li><i data-lucide="check"></i> Flexible auto-renewal</li>
+                        </ul>
+                        <a href="login.html" class="btn btn-primary">Choose Plan</a>
+                    </article>
+
+                    <article class="mb-plan mb-reveal" style="--d:.24s">
+                        <span class="mb-plan-icon"><i data-lucide="crown"></i></span>
+                        <h3>Annual Member</h3>
+                        <p class="mb-plan-desc">Best value for a committed practice</p>
+                        <div class="mb-price"><span>$</span>899<small>/ year</small></div>
+                        <ul>
+                            <li><i data-lucide="check"></i> Unlimited group classes</li>
+                            <li><i data-lucide="check"></i> 2 private sessions</li>
+                            <li><i data-lucide="check"></i> Workshop discounts</li>
+                            <li><i data-lucide="check"></i> Pause up to 30 days</li>
+                        </ul>
+                        <a href="login.html" class="btn btn-secondary">Choose Plan</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 4. PLAN FINDER ================= -->
+        <section class="section" id="finder">
+            <div class="container">
+                <div class="section-head mb-reveal">
+                    <span class="eyebrow">Plan Finder</span>
+                    <h2>How often do you want to practice?</h2>
+                    <p>Slide to see what each plan would cost you per month and which one gives you the best value.</p>
+                </div>
+
+                <div class="mb-finder mb-reveal">
+                    <div class="mb-slider-box">
+                        <div class="mb-slider-head">
+                            <span>Classes per week</span>
+                            <strong><b id="mbWeekly">2</b> <small id="mbMonthly">≈ 9 classes / month</small></strong>
+                        </div>
+                        <input type="range" id="mbRange" min="1" max="7" step="1" value="2"
+                            aria-label="Classes per week" />
+                        <div class="mb-ticks">
+                            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+                        </div>
+                    </div>
+
+                    <div class="mb-results" id="mbResults">
+                        <div class="mb-result" data-plan="pack">
+                            <span class="mb-best"><i data-lucide="trophy"></i> Best value</span>
+                            <h3>Class Pack</h3>
+                            <div class="mb-res-price"><span id="rPack">$0</span><small>/ month</small></div>
+                            <div class="mb-res-bar"><i id="bPack"></i></div>
+                            <p><b id="cPack">$14</b> per class · pay as you go</p>
+                        </div>
+                        <div class="mb-result" data-plan="unlimited">
+                            <span class="mb-best"><i data-lucide="trophy"></i> Best value</span>
+                            <h3>Unlimited Monthly</h3>
+                            <div class="mb-res-price"><span id="rUnl">$95</span><small>/ month</small></div>
+                            <div class="mb-res-bar"><i id="bUnl"></i></div>
+                            <p><b id="cUnl">$0</b> per class · cancel anytime</p>
+                        </div>
+                        <div class="mb-result" data-plan="annual">
+                            <span class="mb-best"><i data-lucide="trophy"></i> Best value</span>
+                            <h3>Annual Member</h3>
+                            <div class="mb-res-price"><span id="rAnn">$75</span><small>/ month</small></div>
+                            <div class="mb-res-bar"><i id="bAnn"></i></div>
+                            <p><b id="cAnn">$0</b> per class · billed $899 yearly</p>
+                        </div>
+                    </div>
+
+                    <p class="mb-advice" id="mbAdvice" aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 5. COMPARISON TABLE ================= -->
+        <section class="section alt" id="compare">
+            <div class="container">
+                <div class="section-head mb-reveal">
+                    <span class="eyebrow">Compare</span>
+                    <h2>Everything side by side</h2>
+                </div>
+                <div class="mb-table-wrap mb-reveal">
+                    <table class="mb-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Class Pack<small>$140 / pack</small></th>
+                                <th class="hl">Unlimited<small>$95 / month</small></th>
+                                <th>Annual<small>$899 / year</small></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Group classes</td>
+                                <td>10 classes</td>
+                                <td class="hl">Unlimited</td>
+                                <td>Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>Validity</td>
+                                <td>3 months</td>
+                                <td class="hl">Monthly renewal</td>
+                                <td>12 months</td>
+                            </tr>
+                            <tr>
+                                <td>Online booking &amp; tracking</td>
+                                <td><i data-lucide="check"></i></td>
+                                <td class="hl"><i data-lucide="check"></i></td>
+                                <td><i data-lucide="check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Priority slot booking</td>
+                                <td><i data-lucide="minus" class="no"></i></td>
+                                <td class="hl"><i data-lucide="check"></i></td>
+                                <td><i data-lucide="check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Free guest pass</td>
+                                <td><i data-lucide="minus" class="no"></i></td>
+                                <td class="hl">1 / month</td>
+                                <td>1 / month</td>
+                            </tr>
+                            <tr>
+                                <td>Share with a friend</td>
+                                <td><i data-lucide="check"></i></td>
+                                <td class="hl"><i data-lucide="minus" class="no"></i></td>
+                                <td><i data-lucide="minus" class="no"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Private sessions</td>
+                                <td><i data-lucide="minus" class="no"></i></td>
+                                <td class="hl"><i data-lucide="minus" class="no"></i></td>
+                                <td>2 included</td>
+                            </tr>
+                            <tr>
+                                <td>Workshop discounts</td>
+                                <td><i data-lucide="minus" class="no"></i></td>
+                                <td class="hl"><i data-lucide="minus" class="no"></i></td>
+                                <td><i data-lucide="check"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Pause membership</td>
+                                <td><i data-lucide="minus" class="no"></i></td>
+                                <td class="hl"><i data-lucide="minus" class="no"></i></td>
+                                <td>Up to 30 days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 6. HOW TO JOIN ================= -->
+        <section class="section" id="join-steps">
+            <div class="container mb-join">
+                <div class="mb-join-media mb-reveal">
+                    <div class="mb-join-photo">
+                        <img src="./images/yoga 3.jpg"
+                            alt="Calm Zenora studio ready for class" loading="lazy"
+                            onerror="this.style.display='none'" />
+                    </div>
+                    <div class="mb-join-float">
+                        <i data-lucide="sparkles"></i>
+                        <div><strong>5,000+ members</strong><small>already practicing with us</small></div>
+                    </div>
+                </div>
+
+                <div class="mb-join-text mb-reveal" style="--d:.15s">
+                    <span class="eyebrow">How It Works</span>
+                    <h2>Become a member in three easy steps</h2>
+                    <ol class="mb-steps">
+                        <li>
+                            <span class="mb-step-num">1</span>
+                            <div>
+                                <h3>Pick your plan</h3>
+                                <p>Choose the pack or membership that matches how you like to practice.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="mb-step-num">2</span>
+                            <div>
+                                <h3>Create your account</h3>
+                                <p>Sign in to the member portal and complete checkout in a couple of minutes.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="mb-step-num">3</span>
+                            <div>
+                                <h3>Book your first class</h3>
+                                <p>Choose a time from the timetable and roll out your mat. We handle the rest.</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <a href="login.html" class="btn btn-primary">Get Started <i data-lucide="arrow-right"
+                            class="flip"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 7. FAQ ================= -->
+        <section class="section alt" id="faq">
+            <div class="container mb-faq-wrap">
+                <div class="mb-faq-intro mb-reveal">
+                    <span class="eyebrow">Membership FAQ</span>
+                    <h2>Questions about joining?</h2>
+                    <p>Here are quick answers. For anything else, our team is just a message away.</p>
+                    <a href="mailto:hello@zenora.com" class="btn btn-secondary"><i data-lucide="mail"></i> Email us</a>
+                </div>
+
+                <div class="mb-faq mb-reveal" style="--d:.12s" id="mbFaq">
+                    <div class="mb-faq-item open">
+                        <button class="mb-faq-q" aria-expanded="true"><span>Can I switch plans later?</span><i
+                                data-lucide="plus"></i></button>
+                        <div class="mb-faq-a">
+                            <div>
+                                <p>Yes. You can upgrade or change plans anytime from your dashboard, and any unused
+                                    value is considered at renewal.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-faq-item">
+                        <button class="mb-faq-q" aria-expanded="false"><span>How does auto-renewal work?</span><i
+                                data-lucide="plus"></i></button>
+                        <div class="mb-faq-a">
+                            <div>
+                                <p>Unlimited Monthly renews each month and can be cancelled before the renewal date.
+                                    Packs and annual plans end on their own and never renew unless you choose.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-faq-item">
+                        <button class="mb-faq-q" aria-expanded="false"><span>What happens if I do not use all 10
+                                classes?</span><i data-lucide="plus"></i></button>
+                        <div class="mb-faq-a">
+                            <div>
+                                <p>A class pack is valid for 3 months. Remaining classes expire after that, so we send a
+                                    friendly reminder before then.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-faq-item">
+                        <button class="mb-faq-q" aria-expanded="false"><span>Can I pause my membership?</span><i
+                                data-lucide="plus"></i></button>
+                        <div class="mb-faq-a">
+                            <div>
+                                <p>Annual members can pause for up to 30 days, perfect for travel or recovery. Just
+                                    request it from your dashboard.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-faq-item">
+                        <button class="mb-faq-q" aria-expanded="false"><span>Are mats and props included?</span><i
+                                data-lucide="plus"></i></button>
+                        <div class="mb-faq-a">
+                            <div>
+                                <p>Always. Mats, blocks, straps and bolsters are provided for every class at no extra
+                                    cost.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 8. CTA ================= -->
+        <section class="mb-cta" id="start">
+            <div class="mb-cta-bg">
+                <img src="https://unsplash.com/photos/bHEoayA42qg/download?force=true&w=1600"
+                    alt="Peaceful yoga space with plants" loading="lazy" onerror="this.style.display='none'" />
+            </div>
+            <div class="mb-cta-overlay"></div>
+            <div class="container mb-cta-inner">
+                <div class="mb-cta-card mb-reveal">
+                    <span class="mb-pill"><i data-lucide="heart-handshake"></i> Join Zenora</span>
+                    <h2>Your calmest year starts with one class.</h2>
+                    <p>Join thousands of members who have made mindful movement part of everyday life.</p>
+                    <div class="mb-cta-btns">
+                        <a href="login.html" class="btn btn-light">Member Login <i data-lucide="arrow-right"
+                                class="flip"></i></a>
+                        <a href="classes.html" class="btn btn-ghost">Browse Classes</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand" aria-label="Zenora home">
+                    <img class="brand-logo" src="images/logo%201.png" alt="" />
+                    <span class="brand-text">
+                        <span class="brand-name">Zenora</span>
+                        <span class="brand-tagline">Find Your Balance. Feel Your Peace</span>
+                    </span>
+                </a>
+                <p>A calm, welcoming yoga and meditation studio for every body and every level.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="instructors.html">Instructors</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Studio Hours</h4>
+                <ul class="footer-links plain">
+                    <li>Mon – Fri: 6:00 AM – 9:00 PM</li>
+                    <li>Saturday: 7:00 AM – 7:00 PM</li>
+                    <li>Sunday: 8:00 AM – 1:00 PM</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <ul class="footer-links plain">
+                    <li><i data-lucide="map-pin"></i> 24 Lotus Lane, Banjara Hills</li>
+                    <li><i data-lucide="phone"></i> +91 98765 43210</li>
+                    <li><i data-lucide="mail"></i> hello@zenora.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year">2026</span> Zenora. All rights reserved.</p>
+            <div class="legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Lucide icons (pinned version that includes social icons) -->
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <script src="membership.js"></script>
+</body>
+
+</html>

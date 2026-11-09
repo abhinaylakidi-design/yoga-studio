@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instructors | Zenora Yoga & Meditation Studio</title>
+    <meta name="description"
+        content="Meet the certified, caring yoga and meditation teachers at Zenora. Explore their styles, training and teaching philosophy." />
+    <link rel="icon" type="image/png" href="images/logo%201.png" />
+
+    <!-- Apply saved theme + direction before paint (prevents flash) -->
+    <script>
+        try {
+            var t = localStorage.getItem("zenora-theme");
+            var d = localStorage.getItem("zenora-dir");
+            if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+            if (d === "rtl") document.documentElement.setAttribute("dir", "rtl");
+        } catch (e) { }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="instructors.css" />
+</head>
+
+<body>
+
+    <!-- ================= HEADER (3 equal-gap divs) ================= -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+
+            <!-- DIV 1: Logo + brand name + tagline -->
+            <div class="header-brand">
+                <a href="index.html" class="brand" aria-label="Zenora home">
+                    <img class="brand-logo" src="images/logo%201.png" alt="" />
+                    <span class="brand-text">
+                        <span class="brand-name">Zenora</span>
+                        <span class="brand-tagline">Find Your Balance. Feel Your Peace</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- DIV 2: Navigation links -->
+            <nav class="nav" id="nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li class="has-dropdown">
+                        <a href="index.html" aria-haspopup="true">Home <i data-lucide="chevron-down"
+                                class="dd-icon"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html">Home 1 <small>Classic</small></a></li>
+                            <li><a href="home-2.html">Home 2 <small>Premium</small></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="instructors.html" class="active">Instructors</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-cta-item"><a href="login.html" class="btn btn-primary">Member Login</a></li>
+                </ul>
+            </nav>
+
+            <!-- DIV 3: Action buttons + the single CTA -->
+            <div class="header-actions">
+                <button class="icon-btn" id="rtlToggle" aria-label="Toggle right-to-left layout" title="RTL / LTR">
+                    <i data-lucide="arrow-left-right"></i>
+                </button>
+                <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary header-cta">Member Login</a>
+                <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= 1. HERO (dark stage + expanding portrait panels) ================= -->
+        <section class="ins-hero" id="top">
+            <span class="ins-glow ins-glow-1"></span>
+            <span class="ins-glow ins-glow-2"></span>
+
+            <div class="container ins-hero-inner">
+                <div class="ins-hero-head">
+                    <div class="ins-hero-title">
+                        <h1 class="ins-fade" style="--d:.1s">The hands and hearts <em>behind every class.</em></h1>
+                    </div>
+                    <div class="ins-hero-side ins-fade" style="--d:.25s">
+                        <p>Certified, experienced and endlessly kind. Hover over a teacher to meet them.</p>
+                        <div class="ins-hero-btns">
+                            <a href="#team" class="btn btn-gold">Meet the Team <i data-lucide="arrow-down"></i></a>
+                            <a href="#book" class="btn btn-ghost">Book a Session</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ins-panels ins-fade" style="--d:.4s" id="insPanels">
+                    <article class="ins-panel active" tabindex="0" aria-label="Aanya Rao">
+                        <img src="https://i.pravatar.cc/900?img=47" alt="Portrait of instructor Aanya Rao" onerror="this.style.display='none'" />
+                        <div class="ins-panel-shade"></div>
+                        <span class="ins-vert">Aanya Rao</span>
+                        <div class="ins-panel-info">
+                            <span class="ins-years"><i data-lucide="award"></i> 12 years teaching</span>
+                            <h3>Aanya Rao</h3>
+                            <p class="ins-role">Hatha &amp; Yin · 500-hr RYT</p>
+                            <p class="ins-quote">"Yoga is a conversation with your body. Listen first."</p>
+                            <button class="ins-link" data-open="0">View profile <i data-lucide="arrow-right" class="flip"></i></button>
+                        </div>
+                    </article>
+                    <article class="ins-panel" tabindex="0" aria-label="Kabir Mehta">
+                        <img src="https://i.pravatar.cc/900?img=12" alt="Portrait of instructor Kabir Mehta" onerror="this.style.display='none'" />
+                        <div class="ins-panel-shade"></div>
+                        <span class="ins-vert">Kabir Mehta</span>
+                        <div class="ins-panel-info">
+                            <span class="ins-years"><i data-lucide="award"></i> 9 years teaching</span>
+                            <h3>Kabir Mehta</h3>
+                            <p class="ins-role">Vinyasa &amp; Power · 300-hr RYT</p>
+                            <p class="ins-quote">"Strength is built gently, one steady breath at a time."</p>
+                            <button class="ins-link" data-open="1">View profile <i data-lucide="arrow-right" class="flip"></i></button>
+                        </div>
+                    </article>
+                    <article class="ins-panel" tabindex="0" aria-label="Meera Nair">
+                        <img src="https://i.pravatar.cc/900?img=49" alt="Portrait of instructor Meera Nair" onerror="this.style.display='none'" />
+                        <div class="ins-panel-shade"></div>
+                        <span class="ins-vert">Meera Nair</span>
+                        <div class="ins-panel-info">
+                            <span class="ins-years"><i data-lucide="award"></i> 10 years teaching</span>
+                            <h3>Meera Nair</h3>
+                            <p class="ins-role">Meditation &amp; Breathwork</p>
+                            <p class="ins-quote">"Stillness is not empty. It is where clarity lives."</p>
+                            <button class="ins-link" data-open="2">View profile <i data-lucide="arrow-right" class="flip"></i></button>
+                        </div>
+                    </article>
+                    <article class="ins-panel" tabindex="0" aria-label="Rohan Iyer">
+                        <img src="https://i.pravatar.cc/900?img=33" alt="Portrait of instructor Rohan Iyer" onerror="this.style.display='none'" />
+                        <div class="ins-panel-shade"></div>
+                        <span class="ins-vert">Rohan Iyer</span>
+                        <div class="ins-panel-info">
+                            <span class="ins-years"><i data-lucide="award"></i> 11 years teaching</span>
+                            <h3>Rohan Iyer</h3>
+                            <p class="ins-role">Ashtanga · 500-hr RYT</p>
+                            <p class="ins-quote">"Discipline, practiced with joy, becomes freedom."</p>
+                            <button class="ins-link" data-open="3">View profile <i data-lucide="arrow-right" class="flip"></i></button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 2. INTRO + STATS ================= -->
+        <section class="section" id="intro">
+            <div class="container ins-intro">
+                <div class="ins-intro-text ins-reveal">
+                    <span class="eyebrow">Our Teachers</span>
+                    <h2>Teaching is a practice, not a performance</h2>
+                    <p>
+                        Every Zenora teacher is certified, continuously learning and chosen as much for their warmth
+                        as their skill. They notice the small things: a tight shoulder, a held breath, a nervous
+                        first-timer, and they respond with patience.
+                    </p>
+                    <p>
+                        Whatever your style or level, you will be guided safely, adjusted gently and never rushed.
+                    </p>
+                    <a href="classes.html" class="btn btn-secondary">See Their Classes <i data-lucide="arrow-right" class="flip"></i></a>
+                </div>
+                <div class="ins-stats">
+                    <div class="ins-stat ins-reveal">
+                        <i data-lucide="graduation-cap"></i>
+                        <strong><span data-count="12">0</span></strong>
+                        <span>Certified teachers</span>
+                    </div>
+                    <div class="ins-stat ins-reveal" style="--d:.1s">
+                        <i data-lucide="hourglass"></i>
+                        <strong><span data-count="100">0</span>+</strong>
+                        <span>Years combined experience</span>
+                    </div>
+                    <div class="ins-stat ins-reveal" style="--d:.2s">
+                        <i data-lucide="calendar-check"></i>
+                        <strong><span data-count="45">0</span>+</strong>
+                        <span>Weekly classes taught</span>
+                    </div>
+                    <div class="ins-stat ins-reveal" style="--d:.3s">
+                        <i data-lucide="heart"></i>
+                        <strong><span data-count="98">0</span>%</strong>
+                        <span>Student satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 3. TEAM GRID ================= -->
+        <section class="section alt" id="team">
+            <div class="container">
+                <div class="section-head ins-reveal">
+                    <span class="eyebrow">Meet the Team</span>
+                    <h2>Find a teacher who fits your practice</h2>
+                    <p>Filter by specialty, then open a profile to read their story and training.</p>
+                </div>
+
+                <div class="ins-chips ins-reveal" id="insChips" role="tablist" aria-label="Filter teachers">
+                    <button class="ins-chip active" data-filter="all">All Teachers</button>
+                    <button class="ins-chip" data-filter="hatha">Hatha &amp; Yin</button>
+                    <button class="ins-chip" data-filter="vinyasa">Vinyasa &amp; Power</button>
+                    <button class="ins-chip" data-filter="meditation">Meditation</button>
+                    <button class="ins-chip" data-filter="breathwork">Breathwork</button>
+                </div>
+
+                <div class="ins-grid" id="insGrid"></div>
+            </div>
+        </section>
+
+        <!-- ================= 4. FOUNDER SPOTLIGHT ================= -->
+        <section class="section" id="spotlight">
+            <div class="container ins-spot">
+                <div class="ins-spot-media ins-reveal">
+                    <div class="ins-spot-photo">
+                        <img src="https://i.pravatar.cc/900?img=47" alt="Aanya Rao, lead teacher" loading="lazy" onerror="this.style.display='none'" />
+                    </div>
+                    <div class="ins-spot-badge">
+                        <i data-lucide="sparkles"></i>
+                        <strong>Lead Teacher</strong>
+                        <span>Since 2015</span>
+                    </div>
+                    <div class="ins-spot-card">
+                        <i data-lucide="award"></i>
+                        <div><strong>500-hr RYT</strong><small>Yoga Alliance registered</small></div>
+                    </div>
+                </div>
+
+                <div class="ins-spot-text ins-reveal" style="--d:.15s">
+                    <span class="eyebrow">Teacher Spotlight</span>
+                    <h2>Aanya Rao</h2>
+                    <p class="ins-spot-role">Lead Teacher · Hatha &amp; Yin</p>
+                    <blockquote>
+                        "I teach people to come home to their bodies. Once you can truly listen, the practice
+                        becomes your own."
+                    </blockquote>
+                    <p>
+                        Aanya began practicing in her twenties to ease a stressful corporate career and never looked
+                        back. After training in India and Rishikesh, she helped shape Zenora's gentle, detail-rich
+                        approach to alignment and breath.
+                    </p>
+                    <div class="ins-tags">
+                        <span>Hatha</span><span>Yin</span><span>Alignment</span><span>Stress Relief</span>
+                    </div>
+                    <ul class="ins-facts">
+                        <li><i data-lucide="check"></i> 12 years of teaching experience</li>
+                        <li><i data-lucide="check"></i> Trained in anatomy and injury-aware practice</li>
+                        <li><i data-lucide="check"></i> Leads our teacher mentoring program</li>
+                    </ul>
+                    <button class="btn btn-primary" data-open="0">Read Full Profile <i data-lucide="arrow-right" class="flip"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 5. SPECIALTIES ================= -->
+        <section class="section alt" id="specialties">
+            <div class="container">
+                <div class="section-head ins-reveal">
+                    <span class="eyebrow">Specialties</span>
+                    <h2>Six styles, taught by true specialists</h2>
+                    <p>Every discipline is led by teachers who have devoted years to it.</p>
+                </div>
+                <div class="ins-spec-grid">
+                    <article class="ins-spec ins-reveal">
+                        <span class="ins-spec-icon"><i data-lucide="flower-2"></i></span>
+                        <h3>Hatha Yoga</h3>
+                        <p>Foundational poses, alignment and steady breath for every level.</p>
+                        <span class="ins-spec-count">3 teachers</span>
+                    </article>
+                    <article class="ins-spec ins-reveal" style="--d:.1s">
+                        <span class="ins-spec-icon"><i data-lucide="waves"></i></span>
+                        <h3>Vinyasa Flow</h3>
+                        <p>Breath-led sequences that build heat, strength and fluid grace.</p>
+                        <span class="ins-spec-count">3 teachers</span>
+                    </article>
+                    <article class="ins-spec ins-reveal" style="--d:.2s">
+                        <span class="ins-spec-icon"><i data-lucide="moon"></i></span>
+                        <h3>Yin &amp; Restorative</h3>
+                        <p>Long, supported holds that release tension and soothe the nervous system.</p>
+                        <span class="ins-spec-count">2 teachers</span>
+                    </article>
+                    <article class="ins-spec ins-reveal">
+                        <span class="ins-spec-icon"><i data-lucide="mountain"></i></span>
+                        <h3>Ashtanga</h3>
+                        <p>A disciplined, traditional sequence that sharpens focus and endurance.</p>
+                        <span class="ins-spec-count">1 teacher</span>
+                    </article>
+                    <article class="ins-spec ins-reveal" style="--d:.1s">
+                        <span class="ins-spec-icon"><i data-lucide="brain"></i></span>
+                        <h3>Meditation</h3>
+                        <p>Mindfulness, body scans and compassion practices to quiet the mind.</p>
+                        <span class="ins-spec-count">2 teachers</span>
+                    </article>
+                    <article class="ins-spec ins-reveal" style="--d:.2s">
+                        <span class="ins-spec-icon"><i data-lucide="wind"></i></span>
+                        <h3>Breathwork</h3>
+                        <p>Pranayama techniques to reduce stress and restore your energy.</p>
+                        <span class="ins-spec-count">2 teachers</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 6. STANDARDS + CERT MARQUEE ================= -->
+        <section class="ins-standards" id="standards">
+            <div class="ins-std-bg"></div>
+            <div class="container">
+                <div class="section-head ins-reveal">
+                    <span class="eyebrow ins-eyebrow-light">Our Standards</span>
+                    <h2>How we choose and grow our teachers</h2>
+                    <p>Great teaching is earned. Every instructor meets the same high bar before they lead a class.</p>
+                </div>
+                <div class="ins-std-grid">
+                    <article class="ins-std ins-reveal">
+                        <span class="ins-std-num">01</span>
+                        <h3>Properly certified</h3>
+                        <p>A minimum 200-hour registered training, with senior teachers holding 300 and 500-hour credentials.</p>
+                    </article>
+                    <article class="ins-std ins-reveal" style="--d:.12s">
+                        <span class="ins-std-num">02</span>
+                        <h3>Observed and mentored</h3>
+                        <p>New teachers shadow and are mentored by senior instructors before leading public classes.</p>
+                    </article>
+                    <article class="ins-std ins-reveal" style="--d:.24s">
+                        <span class="ins-std-num">03</span>
+                        <h3>Always learning</h3>
+                        <p>Ongoing workshops in anatomy, mindfulness, first aid and inclusive teaching every year.</p>
+                    </article>
+                </div>
+
+                <div class="ins-marquee" aria-label="Teacher qualifications">
+                    <div class="ins-marquee-track">
+                        <span><i data-lucide="badge-check"></i> Yoga Alliance RYT-500</span>
+                        <span><i data-lucide="badge-check"></i> Mindfulness Teacher Training</span>
+                        <span><i data-lucide="badge-check"></i> Yin Yoga Certified</span>
+                        <span><i data-lucide="badge-check"></i> Pranayama Practitioner</span>
+                        <span><i data-lucide="badge-check"></i> Prenatal Yoga Certified</span>
+                        <span><i data-lucide="badge-check"></i> First Aid &amp; CPR</span>
+                        <span><i data-lucide="badge-check"></i> Anatomy for Yoga</span>
+                        <span><i data-lucide="badge-check"></i> Yoga Alliance RYT-500</span>
+                        <span><i data-lucide="badge-check"></i> Mindfulness Teacher Training</span>
+                        <span><i data-lucide="badge-check"></i> Yin Yoga Certified</span>
+                        <span><i data-lucide="badge-check"></i> Pranayama Practitioner</span>
+                        <span><i data-lucide="badge-check"></i> Prenatal Yoga Certified</span>
+                        <span><i data-lucide="badge-check"></i> First Aid &amp; CPR</span>
+                        <span><i data-lucide="badge-check"></i> Anatomy for Yoga</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 7. STUDENT TESTIMONIALS ================= -->
+        <section class="section" id="voices">
+            <div class="container">
+                <div class="section-head ins-reveal">
+                    <span class="eyebrow">Student Voices</span>
+                    <h2>What students say about their teachers</h2>
+                </div>
+
+                <div class="ins-slider ins-reveal" id="insSlider">
+                    <i data-lucide="quote" class="ins-slider-mark"></i>
+                    <div class="ins-slides">
+                        <figure class="ins-slide active">
+                            <blockquote>Aanya noticed my tight shoulders in the first five minutes and quietly adjusted the whole class around it. I have never felt so looked after on a mat.</blockquote>
+                            <figcaption><span class="ins-av">SP</span><div><strong>Sneha P.</strong><small>Studies with Aanya · Hatha &amp; Yin</small></div></figcaption>
+                        </figure>
+                        <figure class="ins-slide">
+                            <blockquote>Kabir's Vinyasa classes feel like a moving meditation. He pushes just enough, and always with a smile. My strength has changed completely this year.</blockquote>
+                            <figcaption><span class="ins-av">AK</span><div><strong>Arjun K.</strong><small>Studies with Kabir · Vinyasa</small></div></figcaption>
+                        </figure>
+                        <figure class="ins-slide">
+                            <blockquote>Meera's breathwork sessions changed how I handle stressful days at work. I use her techniques in meetings, in traffic, everywhere.</blockquote>
+                            <figcaption><span class="ins-av">RN</span><div><strong>Riya N.</strong><small>Studies with Meera · Breathwork</small></div></figcaption>
+                        </figure>
+                        <figure class="ins-slide">
+                            <blockquote>Rohan teaches Ashtanga with such patience that I finally understand the sequence instead of just surviving it. Truly a gifted teacher.</blockquote>
+                            <figcaption><span class="ins-av">VD</span><div><strong>Vikram D.</strong><small>Studies with Rohan · Ashtanga</small></div></figcaption>
+                        </figure>
+                    </div>
+                    <div class="ins-slider-nav">
+                        <button class="ins-arrow" id="insPrev" aria-label="Previous testimonial"><i data-lucide="arrow-left" class="flip"></i></button>
+                        <div class="ins-dots" id="insDots"></div>
+                        <button class="ins-arrow" id="insNext" aria-label="Next testimonial"><i data-lucide="arrow-right" class="flip"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 8. BOOK A SESSION (CTA + form) ================= -->
+        <section class="ins-book" id="book">
+            <div class="container">
+                <div class="ins-book-box ins-reveal">
+                    <span class="ins-ring ins-ring-1"></span>
+                    <span class="ins-ring ins-ring-2"></span>
+
+                    <div class="ins-book-text">
+                        <span class="ins-pill"><i data-lucide="user-round-check"></i> Private Sessions</span>
+                        <h2>Practice one-to-one with a teacher you love</h2>
+                        <p>Tell us a little about your goals and we will match you with the right teacher and a time that suits you.</p>
+                        <ul>
+                            <li><i data-lucide="check"></i> Personalised to your body and pace</li>
+                            <li><i data-lucide="check"></i> In-studio or online</li>
+                            <li><i data-lucide="check"></i> First-session consultation included</li>
+                        </ul>
+                    </div>
+
+                    <form class="ins-form" id="insForm" novalidate>
+                        <label>
+                            <span>Your name</span>
+                            <input type="text" name="name" id="fName" placeholder="Jane Doe" required autocomplete="name" />
+                        </label>
+                        <label>
+                            <span>Email address</span>
+                            <input type="email" name="email" id="fEmail" placeholder="you@example.com" required autocomplete="email" />
+                        </label>
+                        <label>
+                            <span>Preferred teacher</span>
+                            <select name="teacher" id="fTeacher">
+                                <option value="Any teacher">Match me with someone</option>
+                                <option>Aanya Rao</option>
+                                <option>Kabir Mehta</option>
+                                <option>Meera Nair</option>
+                                <option>Rohan Iyer</option>
+                            </select>
+                        </label>
+                        <p class="ins-form-error" id="fError" role="alert" hidden></p>
+                        <button type="submit" class="btn btn-gold">Request a Session <i data-lucide="send" class="flip"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Profile modal -->
+    <div class="ins-modal" id="insModal" aria-hidden="true">
+        <div class="ins-modal-backdrop" data-close></div>
+        <div class="ins-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="mName">
+            <button class="ins-modal-close" data-close aria-label="Close profile"><i data-lucide="x"></i></button>
+            <div class="ins-modal-photo"><img id="mImg" src="" alt="" /></div>
+            <div class="ins-modal-body">
+                <span class="eyebrow" id="mRole"></span>
+                <h3 id="mName"></h3>
+                <p class="ins-modal-years" id="mYears"></p>
+                <p id="mBio"></p>
+                <h4>Training &amp; certifications</h4>
+                <ul class="ins-modal-list" id="mCerts"></ul>
+                <h4>Teaches</h4>
+                <div class="ins-tags" id="mClasses"></div>
+                <a href="classes.html" class="btn btn-primary">See Their Classes <i data-lucide="arrow-right" class="flip"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="ins-toast" id="insToast" role="status" aria-live="polite"><i data-lucide="check-circle-2"></i><span id="insToastMsg"></span></div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand" aria-label="Zenora home">
+                    <img class="brand-logo" src="images/logo%201.png" alt="" />
+                    <span class="brand-text">
+                        <span class="brand-name">Zenora</span>
+                        <span class="brand-tagline">Find Your Balance. Feel Your Peace</span>
+                    </span>
+                </a>
+                <p>A calm, welcoming yoga and meditation studio for every body and every level.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="instructors.html">Instructors</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Studio Hours</h4>
+                <ul class="footer-links plain">
+                    <li>Mon – Fri: 6:00 AM – 9:00 PM</li>
+                    <li>Saturday: 7:00 AM – 7:00 PM</li>
+                    <li>Sunday: 8:00 AM – 1:00 PM</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <ul class="footer-links plain">
+                    <li><i data-lucide="map-pin"></i> 24 Lotus Lane, Banjara Hills</li>
+                    <li><i data-lucide="phone"></i> +91 98765 43210</li>
+                    <li><i data-lucide="mail"></i> hello@zenora.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year">2026</span> Zenora. All rights reserved.</p>
+            <div class="legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Lucide icons (pinned version that includes social icons) -->
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <script src="instructors.js"></script>
+</body>
+
+</html>

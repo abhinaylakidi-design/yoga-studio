@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Zenora Yoga & Meditation Studio</title>
+    <meta name="description"
+        content="Explore Zenora services: group classes, private sessions, guided meditation, breathwork, workshops and retreats, and corporate wellness." />
+    <link rel="icon" type="image/png" href="images/logo%201.png" />
+
+    <!-- Apply saved theme + direction before paint (prevents flash) -->
+    <script>
+        try {
+            var t = localStorage.getItem("zenora-theme");
+            var d = localStorage.getItem("zenora-dir");
+            if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+            if (d === "rtl") document.documentElement.setAttribute("dir", "rtl");
+        } catch (e) { }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="services.css" />
+</head>
+
+<body>
+
+    <!-- ================= HEADER (3 equal-gap divs) ================= -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+
+            <!-- DIV 1: Logo + brand name + tagline -->
+            <div class="header-brand">
+                <a href="index.html" class="brand" aria-label="Zenora home">
+                    <img class="brand-logo" src="images/logo%201.png" alt="" />
+                    <span class="brand-text">
+                        <span class="brand-name">Zenora</span>
+                        <span class="brand-tagline">Find Your Balance. Feel Your Peace</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- DIV 2: Navigation links -->
+            <nav class="nav" id="nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li class="has-dropdown">
+                        <a href="index.html" aria-haspopup="true">Home <i data-lucide="chevron-down"
+                                class="dd-icon"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html">Home 1 <small>Classic</small></a></li>
+                            <li><a href="home-2.html">Home 2 <small>Premium</small></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="instructors.html">Instructors</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-cta-item"><a href="login.html" class="btn btn-primary">Member Login</a></li>
+                </ul>
+            </nav>
+
+            <!-- DIV 3: Action buttons + the single CTA -->
+            <div class="header-actions">
+                <button class="icon-btn" id="rtlToggle" aria-label="Toggle right-to-left layout" title="RTL / LTR">
+                    <i data-lucide="arrow-left-right"></i>
+                </button>
+                <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary header-cta">Member Login</a>
+                <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= 1. HERO ================= -->
+        <section class="sv-hero" id="top">
+            <span class="sv-blob sv-blob-1"></span>
+            <span class="sv-blob sv-blob-2"></span>
+
+            <div class="container sv-hero-inner">
+                <div class="sv-hero-copy">
+                    <span class="eyebrow sv-fade" style="--d:.1s">What We Offer</span>
+                    <h1 class="sv-fade" style="--d:.2s">Services designed for your <span class="sv-accent">well-being.</span></h1>
+                    <p class="sv-lead sv-fade" style="--d:.3s">
+                        From group classes to private guidance, choose the support that fits your rhythm. Every
+                        service is led by caring, certified teachers in a calm, welcoming space.
+                    </p>
+                    <div class="sv-hero-btns sv-fade" style="--d:.4s">
+                        <a href="#services" class="btn btn-primary">Explore Services <i data-lucide="arrow-down"></i></a>
+                        <a href="#how" class="btn btn-secondary">How It Works</a>
+                    </div>
+                    <div class="sv-hero-stats sv-fade" style="--d:.5s">
+                        <div><strong>6</strong><span>Signature services</span></div>
+                        <div><strong>12</strong><span>Expert teachers</span></div>
+                        <div><strong>5,000+</strong><span>Happy members</span></div>
+                    </div>
+                </div>
+
+                <div class="sv-visual sv-fade" style="--d:.25s">
+                    <div class="sv-main-wrap">
+                        <div class="sv-main">
+                            <img src="./images/meditation1.jpg" alt="Woman practicing yoga in soft natural light" onerror="this.style.display='none'" />
+                        </div>
+                    </div>
+                    <div class="sv-mini sv-mini-1">
+                        <img src="./images/hatha yoga.jpg" alt="" onerror="this.style.display='none'" />
+                    </div>
+                    <div class="sv-mini sv-mini-2">
+                        <img src="./images/power yoga.jpg" alt="" onerror="this.style.display='none'" />
+                    </div>
+                    <div class="sv-float sv-float-1">
+                        <span><i data-lucide="flower-2"></i></span>
+                        <div><strong>Group Classes</strong><small>45+ every week</small></div>
+                    </div>
+                    <div class="sv-float sv-float-2">
+                        <span><i data-lucide="heart-handshake"></i></span>
+                        <div><strong>Corporate Wellness</strong><small>On-site programs</small></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 2. SERVICES (6 CARDS) ================= -->
+        <section class="section alt" id="services">
+            <div class="container">
+                <div class="section-head sv-reveal">
+                    <span class="eyebrow">Our Services</span>
+                    <h2>Six ways we support your practice</h2>
+                    <p>Select any service to see what is included, why it works and how much it costs.</p>
+                </div>
+
+                <div class="sv-grid" id="svGrid">
+
+                    <article class="sv-card sv-reveal" data-slug="group-classes">
+                        <div class="sv-card-img">
+                            <img src="./images/group class1.jpg" alt="Group yoga class in a bright studio" loading="lazy" onerror="this.style.display='none'" />
+                            <span class="sv-card-icon"><i data-lucide="users"></i></span>
+                            <span class="sv-num">01</span>
+                        </div>
+                        <div class="sv-card-body">
+                            <h3>Group Classes</h3>
+                            <p>Daily yoga and meditation sessions for every style and level in a warm group setting.</p>
+                            <ul class="sv-chips"><li>45+ weekly classes</li><li>All levels</li><li>Mats included</li></ul>
+                            <a href="service-detail.html?service=group-classes" class="sv-view">View service <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="sv-card sv-reveal" style="--d:.1s" data-slug="private-sessions">
+                        <div class="sv-card-img">
+                            <img src="./images/group.jpg" alt="One-to-one yoga session" loading="lazy" onerror="this.style.display='none'" />
+                            <span class="sv-card-icon"><i data-lucide="user-round"></i></span>
+                            <span class="sv-num">02</span>
+                        </div>
+                        <div class="sv-card-body">
+                            <h3>Private Sessions</h3>
+                            <p>One-to-one practice tailored to your goals, body and pace with a dedicated teacher.</p>
+                            <ul class="sv-chips"><li>Personal plan</li><li>Studio or online</li><li>Flexible timing</li></ul>
+                            <a href="service-detail.html?service=private-sessions" class="sv-view">View service <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="sv-card sv-reveal" style="--d:.2s" data-slug="guided-meditation">
+                        <div class="sv-card-img">
+                            <img src="./images/meditation.jpg" alt="Quiet studio for guided meditation" loading="lazy" onerror="this.style.display='none'" />
+                            <span class="sv-card-icon"><i data-lucide="flower-2"></i></span>
+                            <span class="sv-num">03</span>
+                        </div>
+                        <div class="sv-card-body">
+                            <h3>Guided Meditation</h3>
+                            <p>Learn to quiet the mind with mindfulness, body scans and compassion practices.</p>
+                            <ul class="sv-chips"><li>Beginner friendly</li><li>Seated or lying</li><li>Stress relief</li></ul>
+                            <a href="service-detail.html?service=guided-meditation" class="sv-view">View service <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="sv-card sv-reveal" data-slug="breathwork">
+                        <div class="sv-card-img">
+                            <img src="./images/breathwork.jpg" alt="Calm space for breathwork" loading="lazy" onerror="this.style.display='none'" />
+                            <span class="sv-card-icon"><i data-lucide="wind"></i></span>
+                            <span class="sv-num">04</span>
+                        </div>
+                        <div class="sv-card-body">
+                            <h3>Breathwork</h3>
+                            <p>Simple, powerful breathing techniques to reduce stress and restore your energy.</p>
+                            <ul class="sv-chips"><li>Pranayama</li><li>40 minute sessions</li><li>Better sleep</li></ul>
+                            <a href="service-detail.html?service=breathwork" class="sv-view">View service <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="sv-card sv-reveal" style="--d:.1s" data-slug="workshops-retreats">
+                        <div class="sv-card-img">
+                            <img src="https://images.pexels.com/photos/3822139/pexels-photo-3822139.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Yoga retreat practice" loading="lazy" onerror="this.style.display='none'" />
+                            <span class="sv-card-icon"><i data-lucide="calendar-days"></i></span>
+                            <span class="sv-num">05</span>
+                        </div>
+                        <div class="sv-card-body">
+                            <h3>Workshops &amp; Retreats</h3>
+                            <p>Weekend deep-dives and seasonal retreats to reset, recharge and learn something new.</p>
+                            <ul class="sv-chips"><li>Weekend intensives</li><li>Seasonal retreats</li><li>Small groups</li></ul>
+                            <a href="service-detail.html?service=workshops-retreats" class="sv-view">View service <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="sv-card sv-reveal" style="--d:.2s" data-slug="corporate-wellness">
+                        <div class="sv-card-img">
+                            <img src="./images/wellness.jpg" alt="Team wellness yoga session" loading="lazy" onerror="this.style.display='none'" />
+                            <span class="sv-card-icon"><i data-lucide="heart-handshake"></i></span>
+                            <span class="sv-num">06</span>
+                        </div>
+                        <div class="sv-card-body">
+                            <h3>Corporate Wellness</h3>
+                            <p>On-site and in-studio programs that bring calm and focus to your team.</p>
+                            <ul class="sv-chips"><li>On-site or studio</li><li>Custom programs</li><li>Team focus</li></ul>
+                            <a href="service-detail.html?service=corporate-wellness" class="sv-view">View service <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 3. HOW IT WORKS ================= -->
+        <section class="section" id="how">
+            <div class="container">
+                <div class="section-head sv-reveal">
+                    <span class="eyebrow">How It Works</span>
+                    <h2>Your journey in four simple steps</h2>
+                    <p>Getting started is easy. We guide you from your first question to a practice you love.</p>
+                </div>
+
+                <div class="sv-steps">
+                    <div class="sv-step sv-reveal">
+                        <div class="sv-step-icon">
+                            <i data-lucide="compass"></i>
+                            <span class="sv-step-no">1</span>
+                        </div>
+                        <h3>Choose a service</h3>
+                        <p>Browse our six services and pick the one that matches your goals and experience.</p>
+                    </div>
+                    <div class="sv-step sv-reveal" style="--d:.1s">
+                        <div class="sv-step-icon">
+                            <i data-lucide="calendar-check"></i>
+                            <span class="sv-step-no">2</span>
+                        </div>
+                        <h3>Book your spot</h3>
+                        <p>Reserve a class or session in the member portal in under a minute, any time of day.</p>
+                    </div>
+                    <div class="sv-step sv-reveal" style="--d:.2s">
+                        <div class="sv-step-icon">
+                            <i data-lucide="flower-2"></i>
+                            <span class="sv-step-no">3</span>
+                        </div>
+                        <h3>Arrive and relax</h3>
+                        <p>Walk in to a calm space. Mats and props are ready, and your teacher will welcome you.</p>
+                    </div>
+                    <div class="sv-step sv-reveal" style="--d:.3s">
+                        <div class="sv-step-icon">
+                            <i data-lucide="trending-up"></i>
+                            <span class="sv-step-no">4</span>
+                        </div>
+                        <h3>Grow your practice</h3>
+                        <p>Track progress in your dashboard and explore deeper services as you feel ready.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 4. WHY CHOOSE ZENORA ================= -->
+        <section class="section alt" id="why">
+            <div class="container sv-why">
+                <div class="sv-why-visual sv-reveal">
+                    <div class="sv-why-photo">
+                        <img src="https://images.pexels.com/photos/4534605/pexels-photo-4534605.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Teacher guiding a yoga class" loading="lazy" onerror="this.style.display='none'" />
+                    </div>
+                    <div class="sv-why-badge">
+                        <strong>10+</strong>
+                        <span>Years of<br>mindful teaching</span>
+                    </div>
+                </div>
+
+                <div class="sv-why-copy">
+                    <div class="sv-reveal">
+                        <span class="eyebrow">Why Zenora</span>
+                        <h2>Care you can feel in every session</h2>
+                        <p class="sv-why-lead">We believe a good practice should feel safe, personal and sustainable. Here is what makes our services different.</p>
+                    </div>
+
+                    <ul class="sv-why-list">
+                        <li class="sv-reveal">
+                            <span class="sv-why-ico"><i data-lucide="award"></i></span>
+                            <div>
+                                <h3>Certified, caring teachers</h3>
+                                <p>Every teacher is professionally trained and chosen for warmth as much as skill.</p>
+                            </div>
+                        </li>
+                        <li class="sv-reveal" style="--d:.08s">
+                            <span class="sv-why-ico"><i data-lucide="users-round"></i></span>
+                            <div>
+                                <h3>Small, welcoming groups</h3>
+                                <p>Limited class sizes mean real attention, gentle adjustments and a friendly community.</p>
+                            </div>
+                        </li>
+                        <li class="sv-reveal" style="--d:.16s">
+                            <span class="sv-why-ico"><i data-lucide="sliders-horizontal"></i></span>
+                            <div>
+                                <h3>Practice that adapts to you</h3>
+                                <p>Options for every level, body and schedule, including injuries and busy weeks.</p>
+                            </div>
+                        </li>
+                        <li class="sv-reveal" style="--d:.24s">
+                            <span class="sv-why-ico"><i data-lucide="leaf"></i></span>
+                            <div>
+                                <h3>A calm, clean space</h3>
+                                <p>Natural light, soft sound and all equipment provided so you can simply arrive and breathe.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 5. TESTIMONIALS ================= -->
+        <section class="section" id="testimonials">
+            <div class="container">
+                <div class="section-head sv-reveal">
+                    <span class="eyebrow">Testimonials</span>
+                    <h2>Kind words from our members</h2>
+                    <p>Real stories from people who found more calm, strength and focus through our services.</p>
+                </div>
+
+                <div class="sv-quotes">
+                    <figure class="sv-quote sv-reveal">
+                        <i data-lucide="quote" class="sv-quote-mark"></i>
+                        <div class="sv-stars" aria-label="5 out of 5 stars">
+                            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                        </div>
+                        <blockquote>I had never done yoga before. The group classes made me feel welcome from day one, and my back pain has eased a lot.</blockquote>
+                        <figcaption>
+                            <span class="sv-avatar">AR</span>
+                            <div><strong>Ananya Reddy</strong><small>Group Classes</small></div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="sv-quote sv-reveal" style="--d:.1s">
+                        <i data-lucide="quote" class="sv-quote-mark"></i>
+                        <div class="sv-stars" aria-label="5 out of 5 stars">
+                            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                        </div>
+                        <blockquote>My private sessions are built around my goals and schedule. I sleep better and handle stressful weeks far more calmly.</blockquote>
+                        <figcaption>
+                            <span class="sv-avatar">KM</span>
+                            <div><strong>Karthik Menon</strong><small>Private Sessions</small></div>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="sv-quote sv-reveal" style="--d:.2s">
+                        <i data-lucide="quote" class="sv-quote-mark"></i>
+                        <div class="sv-stars" aria-label="5 out of 5 stars">
+                            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+                        </div>
+                        <blockquote>We booked a corporate wellness program for our team. Everyone looked forward to it, and our meetings feel more focused.</blockquote>
+                        <figcaption>
+                            <span class="sv-avatar">SN</span>
+                            <div><strong>Sneha Nair</strong><small>Corporate Wellness</small></div>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 6. FAQS ================= -->
+        <section class="section alt" id="faqs">
+            <div class="container">
+                <div class="section-head sv-reveal">
+                    <span class="eyebrow">FAQs</span>
+                    <h2>Frequently asked questions</h2>
+                    <p>Quick answers about how our services work. Need more help? Just ask us.</p>
+                </div>
+
+                <div class="sv-faq-grid" id="svFaq">
+                    <div class="sv-faq-col">
+                        <div class="sv-faq open sv-reveal">
+                            <button class="sv-faq-q" aria-expanded="true"><span class="sv-faq-no">01</span><span>Which service is right for a complete beginner?</span><i data-lucide="plus"></i></button>
+                            <div class="sv-faq-a"><div><p>Group Classes (Hatha or Yin) and Guided Meditation are perfect starting points. If you prefer personal attention, a Private Session lets a teacher build the practice around you.</p></div></div>
+                        </div>
+                        <div class="sv-faq sv-reveal" style="--d:.08s">
+                            <button class="sv-faq-q" aria-expanded="false"><span class="sv-faq-no">02</span><span>How do I book a service?</span><i data-lucide="plus"></i></button>
+                            <div class="sv-faq-a"><div><p>Log in to the member portal to book classes and sessions online. For workshops, retreats and corporate programs, send us a message and we will arrange the details.</p></div></div>
+                        </div>
+                        <div class="sv-faq sv-reveal" style="--d:.16s">
+                            <button class="sv-faq-q" aria-expanded="false"><span class="sv-faq-no">03</span><span>Do I need to bring my own equipment?</span><i data-lucide="plus"></i></button>
+                            <div class="sv-faq-a"><div><p>No. Mats, blocks, straps and bolsters are provided for every service. Just bring water and comfortable clothing.</p></div></div>
+                        </div>
+                    </div>
+                    <div class="sv-faq-col">
+                        <div class="sv-faq sv-reveal" style="--d:.04s">
+                            <button class="sv-faq-q" aria-expanded="false"><span class="sv-faq-no">04</span><span>Can I try a service before committing?</span><i data-lucide="plus"></i></button>
+                            <div class="sv-faq-a"><div><p>Absolutely. Single-session options are available for most services, so you can experience a class or session before choosing a pack or membership.</p></div></div>
+                        </div>
+                        <div class="sv-faq sv-reveal" style="--d:.12s">
+                            <button class="sv-faq-q" aria-expanded="false"><span class="sv-faq-no">05</span><span>What is your cancellation policy?</span><i data-lucide="plus"></i></button>
+                            <div class="sv-faq-a"><div><p>Classes and private sessions can be cancelled free of charge up to 4 hours before they start. Workshops and retreats have their own policy shown at booking.</p></div></div>
+                        </div>
+                        <div class="sv-faq sv-reveal" style="--d:.2s">
+                            <button class="sv-faq-q" aria-expanded="false"><span class="sv-faq-no">06</span><span>Are services suitable if I have an injury?</span><i data-lucide="plus"></i></button>
+                            <div class="sv-faq-a"><div><p>Often yes. Please tell your teacher before the session so they can adapt the practice, and check with your doctor first if you are unsure.</p></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 7. CTA CARD ================= -->
+        <section class="sv-cta" id="start">
+            <div class="container">
+                <div class="sv-cta-card sv-reveal">
+                    <span class="sv-ring sv-ring-1"></span>
+                    <span class="sv-ring sv-ring-2"></span>
+                    <div class="sv-cta-text">
+                        <span class="sv-pill"><i data-lucide="sparkles"></i> Start Today</span>
+                        <h2>Not sure which service is right for you?</h2>
+                        <p>Talk to our friendly team or book a class and let us guide you to the practice that fits your life.</p>
+                        <div class="sv-cta-btns">
+                            <a href="login.html" class="btn btn-light">Book a Class <i data-lucide="arrow-right" class="flip"></i></a>
+                            <a href="mailto:hello@zenora.com" class="btn btn-ghost"><i data-lucide="mail"></i> Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="sv-cta-photo">
+                        <img src="https://unsplash.com/photos/UbZ1je0X33Q/download?force=true&w=800" alt="Yoga practice at Zenora" loading="lazy" onerror="this.style.display='none'" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand" aria-label="Zenora home">
+                    <img class="brand-logo" src="images/logo%201.png" alt="" />
+                    <span class="brand-text">
+                        <span class="brand-name">Zenora</span>
+                        <span class="brand-tagline">Find Your Balance. Feel Your Peace</span>
+                    </span>
+                </a>
+                <p>A calm, welcoming yoga and meditation studio for every body and every level.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="instructors.html">Instructors</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Studio Hours</h4>
+                <ul class="footer-links plain">
+                    <li>Mon – Fri: 6:00 AM – 9:00 PM</li>
+                    <li>Saturday: 7:00 AM – 7:00 PM</li>
+                    <li>Sunday: 8:00 AM – 1:00 PM</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <ul class="footer-links plain">
+                    <li><i data-lucide="map-pin"></i> 24 Lotus Lane, Banjara Hills</li>
+                    <li><i data-lucide="phone"></i> +91 98765 43210</li>
+                    <li><i data-lucide="mail"></i> hello@zenora.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year">2026</span> Zenora. All rights reserved.</p>
+            <div class="legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Lucide icons (pinned version that includes social icons) -->
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <script src="services.js"></script>
+</body>
+
+</html>

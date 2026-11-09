@@ -1,0 +1,450 @@
+/* =========================================================
+   ZENORA – Auth pages (Login / Sign Up)
+   Loaded after index.css (uses its colour tokens)
+   ========================================================= */
+
+html,
+body.auth-body {
+    height: 100%;
+    overflow: hidden;           /* no page scrolling */
+}
+
+body.auth-body {
+    height: 100svh;
+    display: grid;
+    place-items: center;        /* card centred on the page */
+    padding: 12px;
+    background:
+        radial-gradient(800px 480px at 90% 0%, color-mix(in srgb, var(--secondary) 28%, transparent), transparent 70%),
+        radial-gradient(700px 420px at 0% 100%, color-mix(in srgb, var(--primary) 14%, transparent), transparent 70%),
+        var(--bg);
+}
+
+/* RTL / Dark icons – always top-right of the screen */
+.auth-tools {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    left: auto;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+}
+
+.auth-tools .icon-btn {
+    width: 42px;
+    height: 42px;
+    background: var(--card);
+    border-color: var(--secondary);
+}
+
+.auth-tools .icon-btn:hover {
+    background: var(--secondary);
+    color: var(--on-secondary);
+}
+
+/* ---------- Card ---------- */
+.auth-card {
+    width: min(420px, 100%);
+    max-height: 100%;
+    padding: 24px 32px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.auth-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .75rem;
+    margin-bottom: 10px;
+}
+
+.auth-brand img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+}
+
+.auth-brand span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.auth-brand strong {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: .02em;
+}
+
+.auth-brand small {
+    font-size: .66rem;
+    letter-spacing: .04em;
+    color: var(--text-muted);
+    margin-top: 3px;
+    white-space: nowrap;
+}
+
+.auth-head {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.auth-head h1 {
+    font-size: 1.85rem;
+    line-height: 1.1;
+}
+
+.auth-head p {
+    font-size: .84rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    line-height: 1.4;
+}
+
+/* ---------- Form ---------- */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.field label {
+    display: block;
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--heading);
+    margin-bottom: 4px;
+    line-height: 1.2;
+}
+
+.input-wrap {
+    position: relative;
+}
+
+.input-wrap input {
+    width: 100%;
+    height: 42px;
+    padding-block: 0;
+    padding-inline: 40px 42px;
+    font-family: inherit;
+    font-size: .88rem;
+    color: var(--text);
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    outline: none;
+    transition: border-color .3s, box-shadow .3s, background .3s;
+}
+
+.input-wrap input::placeholder {
+    color: var(--text-muted);
+    opacity: .75;
+}
+
+.input-wrap input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+.input-wrap input.invalid {
+    border-color: #C0504D;
+}
+
+.lead-icon {
+    position: absolute;
+    inset-inline-start: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 17px !important;
+    height: 17px !important;
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.eye-btn {
+    position: absolute;
+    inset-inline-end: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--text-muted);
+    transition: color .3s, background .3s;
+}
+
+.eye-btn:hover {
+    color: var(--primary);
+    background: color-mix(in srgb, var(--secondary) 28%, transparent);
+}
+
+.eye-btn i,
+.eye-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Remember me + Forgot password on ONE line */
+.row-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: nowrap;
+}
+
+.check {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .8rem;
+    font-weight: 500;
+    cursor: pointer;
+    line-height: 1.3;
+}
+
+.check input {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+.check.terms {
+    align-items: flex-start;
+}
+
+.check.terms input {
+    margin-top: 2px;
+}
+
+.text-link {
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--primary);
+    white-space: nowrap;
+    transition: color .3s;
+}
+
+.check .text-link {
+    font-size: inherit;
+}
+
+.text-link:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+.form-msg {
+    min-height: 0;
+    font-size: .78rem;
+    font-weight: 600;
+    color: #C0504D;
+    line-height: 1.3;
+}
+
+.form-msg:empty {
+    display: none;
+}
+
+.form-msg.ok {
+    color: var(--primary);
+}
+
+/* CTA – same width as the inputs */
+.auth-cta {
+    width: 100%;
+    height: 44px;
+}
+
+/* ---------- Divider + social ---------- */
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0 10px;
+    font-size: .74rem;
+    color: var(--text-muted);
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+}
+
+.social-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.social-btn {
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 12px;
+    border: 1.5px solid var(--border);
+    background: var(--bg);
+    color: var(--heading);
+    font-weight: 600;
+    font-size: .86rem;
+    transition: border-color .3s, background .3s, transform .3s var(--ease);
+}
+
+.social-btn:hover {
+    border-color: var(--secondary);
+    background: color-mix(in srgb, var(--secondary) 22%, transparent);
+    transform: translateY(-2px);
+}
+
+.demo-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--secondary) 26%, transparent);
+    font-size: .74rem;
+    font-weight: 600;
+    color: var(--heading);
+}
+
+.demo-note i,
+.demo-note svg {
+    width: 14px;
+    height: 14px;
+    color: var(--primary);
+}
+
+.switch-link {
+    text-align: center;
+    margin-top: 10px;
+    font-size: .84rem;
+    color: var(--text-muted);
+}
+
+.switch-link a {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.switch-link a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Keep everything on one screen on short viewports ---------- */
+@media (max-height: 760px) {
+    .auth-card {
+        padding: 18px 28px 16px;
+    }
+
+    .auth-brand {
+        margin-bottom: 6px;
+    }
+
+    .auth-head {
+        margin-bottom: 8px;
+    }
+
+    .auth-head h1 {
+        font-size: 1.6rem;
+    }
+
+    .auth-form {
+        gap: 8px;
+    }
+
+    .input-wrap input {
+        height: 38px;
+    }
+
+    .auth-cta {
+        height: 40px;
+    }
+
+    .social-btn {
+        height: 38px;
+    }
+
+    .divider {
+        margin: 8px 0;
+    }
+}
+
+@media (max-height: 640px) {
+    .auth-brand small,
+    .auth-head p {
+        display: none;
+    }
+
+    .auth-card {
+        padding: 14px 24px 12px;
+    }
+
+    .field label {
+        margin-bottom: 2px;
+        font-size: .72rem;
+    }
+
+    .input-wrap input {
+        height: 34px;
+        font-size: .82rem;
+    }
+
+    .auth-cta {
+        height: 36px;
+    }
+
+    .social-btn {
+        height: 34px;
+    }
+
+    .demo-note {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding-inline: 20px;
+    }
+
+    .auth-tools {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 640px) {
+    .auth-brand img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .auth-brand strong {
+        font-size: 1.6rem;
+    }
+
+    .auth-brand small {
+        font-size: .58rem;
+    }
+}

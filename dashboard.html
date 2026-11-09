@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard | Zenora Yoga & Meditation Studio</title>
+    <meta name="description" content="Zenora member dashboard: book classes, track your pack, view progress, payments and notifications." />
+    <link rel="icon" type="image/png" href="images/logo%201.png" />
+
+    <!-- Apply saved theme + direction before paint (prevents flash) -->
+    <script>
+        try {
+            var t = localStorage.getItem("zenora-theme");
+            var d = localStorage.getItem("zenora-dir");
+            if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+            if (d === "rtl") document.documentElement.setAttribute("dir", "rtl");
+        } catch (e) { }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="dashboard.css" />
+</head>
+
+<body>
+    <div class="app" id="app">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar" id="sidebar" aria-label="Dashboard navigation">
+            <a href="index.html" class="side-brand" aria-label="Zenora home">
+                <img src="images/logo%201.png" alt="" onerror="this.style.display='none'" />
+                <span><b>Zenora</b><small>Member Portal</small></span>
+            </a>
+
+            <nav class="side-nav" id="sideNav">
+                <span class="side-label">Main</span>
+                <button class="nav-item active" data-view="overview"><i data-lucide="layout-dashboard"></i><span>Overview</span></button>
+                <button class="nav-item" data-view="book"><i data-lucide="calendar-plus"></i><span>Book a Class</span></button>
+                <button class="nav-item" data-view="bookings"><i data-lucide="ticket"></i><span>My Bookings</span><em class="nav-count" id="navBookings">0</em></button>
+                <button class="nav-item" data-view="membership"><i data-lucide="crown"></i><span>Membership</span></button>
+
+                <span class="side-label">Growth</span>
+                <button class="nav-item" data-view="progress"><i data-lucide="trending-up"></i><span>My Progress</span></button>
+                <button class="nav-item" data-view="instructors"><i data-lucide="graduation-cap"></i><span>My Teachers</span></button>
+
+                <span class="side-label">Account</span>
+                <button class="nav-item" data-view="payments"><i data-lucide="receipt"></i><span>Payments</span></button>
+                <button class="nav-item" data-view="notifications"><i data-lucide="bell"></i><span>Notifications</span><em class="nav-count warn" id="navNotifs">0</em></button>
+                <button class="nav-item" data-view="profile"><i data-lucide="user-round"></i><span>Profile &amp; Settings</span></button>
+            </nav>
+
+            <div class="side-foot">
+                <div class="side-pack">
+                    <div class="side-pack-top"><span>Class pack</span><b id="sidePackTxt">4 left</b></div>
+                    <div class="bar"><i id="sidePackBar"></i></div>
+                    <small id="sidePackSub">Expires soon</small>
+                </div>
+                <button class="logout-btn" id="logoutBtn"><i data-lucide="log-out" class="flip"></i><span>Log out</span></button>
+            </div>
+        </aside>
+        <div class="scrim" id="scrim"></div>
+
+        <!-- ================= MAIN ================= -->
+        <div class="main">
+
+            <!-- Top bar -->
+            <header class="topbar">
+                <button class="icon-btn burger" id="burger" aria-label="Open menu"><i data-lucide="menu"></i></button>
+
+                <div class="top-title">
+                    <small id="portalTag">User Dashboard</small>
+                    <h1 id="pageTitle">Overview</h1>
+                </div>
+
+                <div class="top-actions">
+                    <a href="index.html" class="icon-btn" aria-label="Back to website" title="Back to website"><i data-lucide="home"></i></a>
+                    <button class="icon-btn" id="rtlToggle" aria-label="Toggle right-to-left layout" title="RTL / LTR"><i data-lucide="arrow-left-right"></i></button>
+                    <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark">
+                        <i data-lucide="moon" class="icon-moon"></i><i data-lucide="sun" class="icon-sun"></i>
+                    </button>
+
+                    <!-- Notifications -->
+                    <div class="dd-wrap" id="notifWrap">
+                        <button class="icon-btn bell" id="bellBtn" aria-label="Notifications" aria-expanded="false">
+                            <i data-lucide="bell"></i><span class="dot" id="bellDot"></span>
+                        </button>
+                        <div class="dd-panel notif-panel" id="notifPanel">
+                            <div class="dd-head"><strong>Notifications</strong><button class="link-btn" id="markAllMini">Mark all read</button></div>
+                            <ul id="notifMini"></ul>
+                            <button class="dd-foot" data-view="notifications">View all notifications <i data-lucide="arrow-right" class="flip"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Profile -->
+                    <div class="dd-wrap" id="profileWrap">
+                        <button class="profile-btn" id="profileBtn" aria-label="Profile menu" aria-expanded="false">
+                            <span class="avatar" id="topAvatar">SP</span>
+                            <span class="profile-meta"><b id="topName">Sneha Patel</b><small>Class Pack member</small></span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="dd-panel profile-panel" id="profilePanel">
+                            <div class="pp-head">
+                                <span class="avatar lg" id="ppAvatar">SP</span>
+                                <div><b id="ppName">Sneha Patel</b><small id="ppEmail">sneha.patel@example.com</small></div>
+                            </div>
+                            <button class="pp-item" data-view="profile"><i data-lucide="user-round"></i> My Profile</button>
+                            <button class="pp-item" data-view="membership"><i data-lucide="crown"></i> Membership</button>
+                            <button class="pp-item" data-view="payments"><i data-lucide="receipt"></i> Payments</button>
+                            <button class="pp-item danger" id="ppLogout"><i data-lucide="log-out" class="flip"></i> Log out</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Views -->
+            <main class="content" id="content">
+
+                <!-- ========== 1. OVERVIEW ========== -->
+                <section class="view active" id="view-overview">
+                    <div class="ov-grid">
+                        <div class="welcome">
+                            <div class="welcome-text">
+                                <span class="welcome-chip"><i data-lucide="calendar-days"></i> <span id="todayLabel"></span></span>
+                                <h2 id="welcomeTitle">Good morning, Sneha</h2>
+                                <p id="welcomeMsg">Welcome back to Zenora.</p>
+                                <div class="welcome-btns">
+                                    <button class="btn btn-gold" data-view="book">Book a class <i data-lucide="arrow-right" class="flip"></i></button>
+                                    <button class="btn btn-ghost" data-view="bookings">My bookings</button>
+                                </div>
+                            </div>
+                            <div class="welcome-side">
+                                <div class="w-badge"><i data-lucide="flame"></i><div><b id="wStreak">5</b><small>week streak</small></div></div>
+                                <div class="w-badge"><i data-lucide="sparkles"></i><div><b id="wMonth">6</b><small>classes this month</small></div></div>
+                            </div>
+                        </div>
+
+                        <div class="metrics">
+                            <article class="metric" style="--i:0">
+                                <span class="m-icon"><i data-lucide="ticket"></i></span>
+                                <div><small>Classes left</small><b data-count id="mLeft">0</b><em class="up" id="mLeftSub"></em></div>
+                            </article>
+                            <article class="metric" style="--i:1">
+                                <span class="m-icon"><i data-lucide="calendar-check"></i></span>
+                                <div><small>Attended this month</small><b data-count id="mMonth">0</b><em class="up"><i data-lucide="trending-up"></i> +2 vs last month</em></div>
+                            </article>
+                            <article class="metric" style="--i:2">
+                                <span class="m-icon"><i data-lucide="flame"></i></span>
+                                <div><small>Weekly streak</small><b data-count id="mStreak">0</b><em class="up">Personal best!</em></div>
+                            </article>
+                            <article class="metric" style="--i:3">
+                                <span class="m-icon"><i data-lucide="clock"></i></span>
+                                <div><small>Upcoming sessions</small><b data-count id="mUpcoming">0</b><em id="mUpSub"></em></div>
+                            </article>
+                        </div>
+
+                        <div class="card ov-upcoming">
+                            <div class="card-head"><h3>Upcoming sessions</h3><button class="link-btn" data-view="bookings">See all</button></div>
+                            <ul class="list scroll" id="ovUpcoming"></ul>
+                        </div>
+
+                        <div class="card ov-activity">
+                            <div class="card-head"><h3>This week</h3><span class="pill">Classes per day</span></div>
+                            <div class="bars" id="ovBars"></div>
+                        </div>
+
+                        <div class="card ov-pack">
+                            <div class="card-head"><h3>Pack usage</h3></div>
+                            <div class="ring-wrap">
+                                <svg viewBox="0 0 140 140" class="ring" aria-hidden="true">
+                                    <circle class="ring-bg" cx="70" cy="70" r="56"></circle>
+                                    <circle class="ring-fg" id="ovRing" cx="70" cy="70" r="56"></circle>
+                                </svg>
+                                <div class="ring-center"><b id="ovRingTxt">6/10</b><small>used</small></div>
+                            </div>
+                            <p class="ring-note" id="ovRingNote"></p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========== 2. BOOK A CLASS ========== -->
+                <section class="view" id="view-book">
+                    <div class="view-head">
+                        <div><h2>Book a class</h2><p>Pick a day and reserve your spot. Cancel free up to 4 hours before.</p></div>
+                        <div class="seg-scroll" id="dayTabs" role="tablist" aria-label="Choose a day"></div>
+                    </div>
+                    <div class="split">
+                        <div class="card fill">
+                            <div class="card-head"><h3 id="slotHeading">Today</h3><span class="pill" id="slotCount"></span></div>
+                            <div class="slots scroll" id="slotList"></div>
+                        </div>
+                        <aside class="side-stack">
+                            <div class="card tint">
+                                <div class="card-head"><h3>Your pack</h3><i data-lucide="ticket"></i></div>
+                                <div class="big-num"><b id="bkLeft">4</b><span>classes available</span></div>
+                                <div class="bar lg"><i id="bkBar"></i></div>
+                                <small class="muted" id="bkNote"></small>
+                            </div>
+                            <div class="card fill">
+                                <div class="card-head"><h3>Reserved</h3><span class="pill" id="bkReservedCount"></span></div>
+                                <ul class="list scroll" id="bkReserved"></ul>
+                            </div>
+                        </aside>
+                    </div>
+                </section>
+
+                <!-- ========== 3. MY BOOKINGS ========== -->
+                <section class="view" id="view-bookings">
+                    <div class="view-head">
+                        <div><h2>My bookings</h2><p>Manage upcoming sessions and revisit the classes you have attended.</p></div>
+                        <div class="seg" id="bkTabs">
+                            <button class="active" data-tab="upcoming">Upcoming</button>
+                            <button data-tab="past">Past</button>
+                        </div>
+                    </div>
+                    <div class="split">
+                        <div class="card fill">
+                            <div class="card-head"><h3 id="bkListTitle">Upcoming sessions</h3><span class="pill" id="bkListCount"></span></div>
+                            <div class="list scroll" id="bkList"></div>
+                        </div>
+                        <aside class="side-stack">
+                            <div class="card center">
+                                <div class="card-head"><h3>Attendance</h3></div>
+                                <div class="ring-wrap sm">
+                                    <svg viewBox="0 0 140 140" class="ring"><circle class="ring-bg" cx="70" cy="70" r="56"></circle><circle class="ring-fg" id="attRing" cx="70" cy="70" r="56"></circle></svg>
+                                    <div class="ring-center"><b id="attPct">92%</b><small>rate</small></div>
+                                </div>
+                                <p class="ring-note">You attended 11 of 12 booked classes. Great consistency!</p>
+                            </div>
+                            <div class="card tint">
+                                <h3 class="mini-h">Good to know</h3>
+                                <ul class="tips">
+                                    <li><i data-lucide="check-circle-2"></i> Arrive 10 minutes early</li>
+                                    <li><i data-lucide="check-circle-2"></i> Free cancellation up to 4 hours before</li>
+                                    <li><i data-lucide="check-circle-2"></i> Late cancels use one class</li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                </section>
+
+                <!-- ========== 4. MEMBERSHIP ========== -->
+                <section class="view" id="view-membership">
+                    <div class="view-head">
+                        <div><h2>Membership</h2><p>Your plan, renewal details and upgrade options.</p></div>
+                        <button class="btn btn-primary" id="renewBtn"><i data-lucide="refresh-cw"></i> Renew pack</button>
+                    </div>
+                    <div class="mem-grid">
+                        <div class="plan-card">
+                            <span class="pc-shine"></span>
+                            <div class="pc-top"><span class="pc-brand"><img src="images/logo%201.png" alt="" onerror="this.style.display='none'" /> Zenora</span><span class="pc-tag">Active</span></div>
+                            <div class="pc-body">
+                                <div>
+                                    <small>CURRENT PLAN</small>
+                                    <h3>10-Class Pack</h3>
+                                    <p id="memExpiry">Valid until</p>
+                                </div>
+                                <div class="ring-wrap sm light">
+                                    <svg viewBox="0 0 140 140" class="ring"><circle class="ring-bg" cx="70" cy="70" r="56"></circle><circle class="ring-fg" id="memRing" cx="70" cy="70" r="56"></circle></svg>
+                                    <div class="ring-center"><b id="memRingTxt">4</b><small>left</small></div>
+                                </div>
+                            </div>
+                            <div class="pc-foot">
+                                <div><small>MEMBER</small><b id="memName">Sneha Patel</b></div>
+                                <div><small>USED</small><b id="memUsed">6 / 10</b></div>
+                                <div><small>SINCE</small><b>2024</b></div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-head"><h3>Renewal &amp; billing</h3><i data-lucide="repeat"></i></div>
+                            <ul class="kv">
+                                <li><span>Next payment</span><b id="memNext">$140</b></li>
+                                <li><span>Renewal date</span><b id="memRenew">-</b></li>
+                                <li><span>Payment method</span><b>Visa ending 4417</b></li>
+                            </ul>
+                            <label class="switch-row">
+                                <span><b>Auto-renew</b><small>Renew automatically when your pack ends</small></span>
+                                <span class="switch"><input type="checkbox" id="autoRenew" /><i></i></span>
+                            </label>
+                        </div>
+
+                        <div class="plans-row">
+                            <article class="opt current" data-plan="pack">
+                                <span class="opt-flag">Your plan</span>
+                                <h4>Class Pack</h4><div class="opt-price"><sup>$</sup>140<small>/ pack</small></div>
+                                <ul><li><i data-lucide="check"></i> 10 classes, 3 months</li><li><i data-lucide="check"></i> Share with a friend</li></ul>
+                                <button class="btn btn-secondary" disabled>Current plan</button>
+                            </article>
+                            <article class="opt pop" data-plan="unlimited">
+                                <span class="opt-flag gold">Popular</span>
+                                <h4>Unlimited Monthly</h4><div class="opt-price"><sup>$</sup>95<small>/ month</small></div>
+                                <ul><li><i data-lucide="check"></i> Unlimited classes</li><li><i data-lucide="check"></i> Priority booking + guest pass</li></ul>
+                                <button class="btn btn-primary" data-upgrade="Unlimited Monthly">Upgrade</button>
+                            </article>
+                            <article class="opt" data-plan="annual">
+                                <h4>Annual Member</h4><div class="opt-price"><sup>$</sup>899<small>/ year</small></div>
+                                <ul><li><i data-lucide="check"></i> Unlimited + 2 private sessions</li><li><i data-lucide="check"></i> Pause up to 30 days</li></ul>
+                                <button class="btn btn-secondary" data-upgrade="Annual Member">Upgrade</button>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========== 5. PROGRESS ========== -->
+                <section class="view" id="view-progress">
+                    <div class="view-head">
+                        <div><h2>My progress</h2><p>See how your practice has grown over the past months.</p></div>
+                        <span class="pill big"><i data-lucide="award"></i> Level: Steady Practitioner</span>
+                    </div>
+                    <div class="prog-grid">
+                        <div class="mini-stats">
+                            <div class="mini"><i data-lucide="calendar-check"></i><div><b data-count data-n="36">0</b><small>Total classes</small></div></div>
+                            <div class="mini"><i data-lucide="timer"></i><div><b data-count data-n="41">0</b><small>Hours practiced</small></div></div>
+                            <div class="mini"><i data-lucide="flame"></i><div><b data-count data-n="5">0</b><small>Week streak</small></div></div>
+                        </div>
+                        <div class="card chart-card">
+                            <div class="card-head"><h3>Monthly attendance</h3><span class="pill">Last 6 months</span></div>
+                            <div class="line-wrap" id="lineChart"></div>
+                        </div>
+                        <div class="card donut-card">
+                            <div class="card-head"><h3>Favourite styles</h3></div>
+                            <div class="donut-wrap"><div class="donut" id="donut"></div><ul class="legend" id="donutLegend"></ul></div>
+                        </div>
+                        <div class="card goals-card">
+                            <div class="card-head"><h3>Monthly goals</h3></div>
+                            <ul class="goals" id="goalList"></ul>
+                        </div>
+                        <div class="card heat-card">
+                            <div class="card-head"><h3>Consistency</h3><span class="pill">Last 12 weeks</span></div>
+                            <div class="heat" id="heat"></div>
+                            <div class="heat-legend"><span>Less</span><i class="l0"></i><i class="l1"></i><i class="l2"></i><i class="l3"></i><span>More</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========== 6. MY TEACHERS ========== -->
+                <section class="view" id="view-instructors">
+                    <div class="view-head">
+                        <div><h2>My teachers</h2><p>The instructors you practice with most. Book a session or send a message.</p></div>
+                        <a href="instructors.html" class="btn btn-secondary">Meet all teachers <i data-lucide="arrow-right" class="flip"></i></a>
+                    </div>
+                    <div class="teacher-grid" id="teacherGrid"></div>
+                </section>
+
+                <!-- ========== 7. PAYMENTS ========== -->
+                <section class="view" id="view-payments">
+                    <div class="view-head">
+                        <div><h2>Payments</h2><p>Invoices, receipts and your saved payment method.</p></div>
+                    </div>
+                    <div class="pay-grid">
+                        <div class="pay-stats">
+                            <div class="mini"><i data-lucide="wallet"></i><div><b id="payTotal">$0</b><small>Total paid</small></div></div>
+                            <div class="mini"><i data-lucide="clock"></i><div><b id="payPending">$0</b><small>Pending</small></div></div>
+                            <div class="mini"><i data-lucide="calendar-clock"></i><div><b id="payNext">-</b><small>Next renewal</small></div></div>
+                        </div>
+                        <div class="card fill table-card">
+                            <div class="card-head"><h3>Invoices</h3><span class="pill" id="invCount"></span></div>
+                            <div class="table-scroll scroll">
+                                <table class="table">
+                                    <thead><tr><th>Invoice</th><th>Description</th><th>Date</th><th>Amount</th><th>Status</th><th></th></tr></thead>
+                                    <tbody id="invBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <aside class="card method">
+                            <div class="card-head"><h3>Payment method</h3><i data-lucide="credit-card"></i></div>
+                            <div class="credit">
+                                <span>VISA</span>
+                                <b>•••• •••• •••• 4417</b>
+                                <div><small>CARD HOLDER</small><em id="cardHolder">Sneha Patel</em></div>
+                                <div><small>EXPIRES</small><em>08 / 28</em></div>
+                            </div>
+                            <button class="btn btn-secondary" id="updateCard"><i data-lucide="pencil"></i> Update card</button>
+                        </aside>
+                    </div>
+                </section>
+
+                <!-- ========== 8. NOTIFICATIONS ========== -->
+                <section class="view" id="view-notifications">
+                    <div class="view-head">
+                        <div><h2>Notifications</h2><p>Reminders, booking updates and studio news in one place.</p></div>
+                        <button class="btn btn-secondary" id="markAll"><i data-lucide="check-check"></i> Mark all as read</button>
+                    </div>
+                    <div class="card fill notif-card">
+                        <div class="seg inline" id="nfTabs">
+                            <button class="active" data-nf="all">All</button>
+                            <button data-nf="unread">Unread</button>
+                            <button data-nf="booking">Bookings</button>
+                            <button data-nf="studio">Studio</button>
+                        </div>
+                        <ul class="nf-list scroll" id="nfList"></ul>
+                    </div>
+                </section>
+
+                <!-- ========== 9. PROFILE & SETTINGS ========== -->
+                <section class="view" id="view-profile">
+                    <div class="view-head">
+                        <div><h2>Profile &amp; settings</h2><p>Keep your details and preferences up to date.</p></div>
+                        <button class="btn btn-primary" id="saveProfile"><i data-lucide="save"></i> Save changes</button>
+                    </div>
+                    <div class="prof-grid">
+                        <div class="card prof-card">
+                            <span class="avatar xl" id="profAvatar">SP</span>
+                            <h3 id="profName">Sneha Patel</h3>
+                            <p class="muted" id="profEmail">sneha.patel@example.com</p>
+                            <span class="pill">Class Pack member</span>
+                            <ul class="prof-stats">
+                                <li><b>2024</b><small>Member since</small></li>
+                                <li><b>36</b><small>Classes</small></li>
+                                <li><b>4</b><small>Teachers</small></li>
+                            </ul>
+                        </div>
+
+                        <form class="card form-card" id="profileForm" novalidate>
+                            <div class="card-head"><h3>Personal information</h3><i data-lucide="user-round"></i></div>
+                            <div class="form-grid">
+                                <label><span>First name</span><input id="fFirst" type="text" autocomplete="given-name" /></label>
+                                <label><span>Last name</span><input id="fLast" type="text" autocomplete="family-name" /></label>
+                                <label><span>Email</span><input id="fEmail" type="email" autocomplete="email" /></label>
+                                <label><span>Phone</span><input id="fPhone" type="tel" autocomplete="tel" /></label>
+                            </div>
+                            <p class="form-err" id="fErr" role="alert" hidden></p>
+                        </form>
+
+                        <div class="card prefs-card">
+                            <div class="card-head"><h3>Preferences</h3><i data-lucide="settings"></i></div>
+                            <label class="switch-row"><span><b>Class reminders</b><small>Email 2 hours before class</small></span><span class="switch"><input type="checkbox" checked /><i></i></span></label>
+                            <label class="switch-row"><span><b>Studio news</b><small>Workshops and retreats</small></span><span class="switch"><input type="checkbox" checked /><i></i></span></label>
+                            <label class="switch-row"><span><b>SMS alerts</b><small>Waitlist and cancellations</small></span><span class="switch"><input type="checkbox" /><i></i></span></label>
+                        </div>
+
+                        <div class="card security-card">
+                            <div class="card-head"><h3>Security</h3><i data-lucide="shield-check"></i></div>
+                            <p class="muted">Last password change 3 months ago. Keep your account secure with a strong password.</p>
+                            <button class="btn btn-secondary" id="changePw"><i data-lucide="lock"></i> Change password</button>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- Logout confirmation -->
+    <div class="modal" id="logoutModal" aria-hidden="true">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="lgTitle">
+            <span class="modal-icon"><i data-lucide="log-out" class="flip"></i></span>
+            <h3 id="lgTitle">Log out of Zenora?</h3>
+            <p>You will need to sign in again to book classes and view your dashboard.</p>
+            <div class="modal-btns">
+                <button class="btn btn-secondary" data-close>Stay signed in</button>
+                <button class="btn btn-primary" id="confirmLogout">Log out</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast" role="status" aria-live="polite"><i data-lucide="check-circle-2"></i><span id="toastMsg"></span></div>
+
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>

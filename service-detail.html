@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Details | Zenora Yoga & Meditation Studio</title>
+    <meta name="description" id="metaDesc"
+        content="Service details, pricing and FAQs at Zenora Yoga & Meditation Studio." />
+    <link rel="icon" type="image/png" href="images/logo%201.png" />
+
+    <!-- Apply saved theme + direction before paint (prevents flash) -->
+    <script>
+        try {
+            var t = localStorage.getItem("zenora-theme");
+            var d = localStorage.getItem("zenora-dir");
+            if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+            if (d === "rtl") document.documentElement.setAttribute("dir", "rtl");
+        } catch (e) { }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="service-detail.css" />
+</head>
+
+<body>
+
+    <!-- ================= HEADER (3 equal-gap divs) ================= -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+
+            <!-- DIV 1: Logo + brand name + tagline -->
+            <div class="header-brand">
+                <a href="index.html" class="brand" aria-label="Zenora home">
+                    <img class="brand-logo" src="images/logo%201.png" alt="" />
+                    <span class="brand-text">
+                        <span class="brand-name">Zenora</span>
+                        <span class="brand-tagline">Find Your Balance. Feel Your Peace</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- DIV 2: Navigation links -->
+            <nav class="nav" id="nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li class="has-dropdown">
+                        <a href="index.html" aria-haspopup="true">Home <i data-lucide="chevron-down"
+                                class="dd-icon"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html">Home 1 <small>Classic</small></a></li>
+                            <li><a href="home-2.html">Home 2 <small>Premium</small></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="instructors.html">Instructors</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-cta-item"><a href="login.html" class="btn btn-primary">Member Login</a></li>
+                </ul>
+            </nav>
+
+            <!-- DIV 3: Action buttons + the single CTA -->
+            <div class="header-actions">
+                <button class="icon-btn" id="rtlToggle" aria-label="Toggle right-to-left layout" title="RTL / LTR">
+                    <i data-lucide="arrow-left-right"></i>
+                </button>
+                <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary header-cta">Member Login</a>
+                <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= 1. HERO (filled by service-detail.js) ================= -->
+        <section class="sd-hero" id="top">
+            <div class="sd-hero-bg"><img id="sdHeroImg" alt="" /></div>
+            <div class="sd-hero-overlay"></div>
+            <span class="sd-orb sd-orb-1"></span>
+            <span class="sd-orb sd-orb-2"></span>
+
+            <div class="container sd-hero-inner">
+                <div class="sd-hero-copy">
+                    <span class="sd-hero-icon sd-fade" style="--d:.1s"><i id="sdHeroIcon"
+                            data-lucide="flower-2"></i></span>
+                    <h1 class="sd-fade" style="--d:.2s" id="sdTitle">Service</h1>
+                    <p class="sd-hero-lead sd-fade" style="--d:.3s" id="sdTagline"></p>
+                    <ul class="sd-badges sd-fade" style="--d:.4s" id="sdBadges"></ul>
+                    <div class="sd-hero-btns sd-fade" style="--d:.5s">
+                        <a href="login.html" class="btn btn-gold">Book This Service <i data-lucide="arrow-right"
+                                class="flip"></i></a>
+                        <a href="#pricing" class="btn btn-ghost">View Pricing</a>
+                    </div>
+                </div>
+
+                <aside class="sd-facts sd-fade" style="--d:.45s" id="sdFacts" aria-label="Quick facts"></aside>
+            </div>
+        </section>
+
+        <!-- ================= 2. OTHER SERVICES (names only) ================= -->
+        <div class="sd-switch" id="sdSwitch">
+            <div class="container sd-switch-inner">
+                <span class="sd-switch-label"><i data-lucide="layout-grid"></i> Other services</span>
+                <nav class="sd-switch-list" id="sdOthers" aria-label="Other services"></nav>
+            </div>
+        </div>
+
+        <!-- ================= 3. OVERVIEW ================= -->
+        <section class="section" id="overview">
+            <div class="container sd-overview">
+                <div class="sd-ov-media sd-reveal">
+                    <span class="sd-ov-frame"></span>
+                    <div class="sd-ov-photo"><img id="sdOvImg" alt="" loading="lazy" /></div>
+                    <div class="sd-ov-chip"><i data-lucide="sparkles"></i><span id="sdOvChip"></span></div>
+                </div>
+
+                <div class="sd-ov-text sd-reveal" style="--d:.15s">
+                    <span class="eyebrow">About This Service</span>
+                    <h2 id="sdOvTitle"></h2>
+                    <div id="sdOvParas"></div>
+                    <ul class="sd-highlights" id="sdHighlights"></ul>
+                    <div class="sd-stats" id="sdStats"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 4. WHY CHOOSE ================= -->
+        <section class="sd-why" id="why">
+            <div class="sd-why-bg"></div>
+            <div class="container">
+                <div class="section-head sd-reveal">
+                    <span class="eyebrow sd-eyebrow-light">Why Choose This Service</span>
+                    <h2 id="sdWhyTitle"></h2>
+                    <p id="sdWhyIntro"></p>
+                </div>
+                <div class="sd-why-grid" id="sdWhy"></div>
+            </div>
+        </section>
+
+        <!-- ================= 5. PRICING ================= -->
+        <section class="section" id="pricing">
+            <div class="container">
+                <div class="section-head sd-reveal">
+                    <span class="eyebrow">Pricing</span>
+                    <h2 id="sdPriceTitle"></h2>
+                    <p id="sdPriceNote"></p>
+                </div>
+                <div class="sd-plans" id="sdPlans"></div>
+            </div>
+        </section>
+
+        <!-- ================= 6. FAQS ================= -->
+        <section class="section alt" id="faqs">
+            <div class="container sd-faq-wrap">
+                <div class="sd-faq-head sd-reveal">
+                    <span class="eyebrow">FAQs</span>
+                    <h2 id="sdFaqTitle"></h2>
+                    <p>Can not find your answer? We are always happy to help.</p>
+                </div>
+                <div class="sd-faq-list" id="sdFaq"></div>
+            </div>
+        </section>
+
+        <!-- ================= 7. CTA CARD ================= -->
+        <section class="sd-cta" id="start">
+            <div class="container">
+                <div class="sd-cta-card sd-reveal">
+                    <div class="sd-cta-photo">
+                        <img id="sdCtaImg" src="" alt="" loading="lazy" onerror="this.style.display='none'" />
+                        <span class="sd-cta-badge"><i id="sdCtaIcon" data-lucide="flower-2"></i></span>
+                    </div>
+                    <div class="sd-cta-text">
+                        <span class="sd-pill"><i data-lucide="heart-handshake"></i> Ready when you are</span>
+                        <h2 id="sdCtaTitle"></h2>
+                        <p id="sdCtaText"></p>
+                        <div class="sd-cta-btns">
+                            <a href="login.html" class="btn btn-light">Book This Service <i data-lucide="arrow-right"
+                                    class="flip"></i></a>
+                            <a href="mailto:hello@zenora.com" class="btn btn-ghost"><i data-lucide="mail"></i> Ask a
+                                Question</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand" aria-label="Zenora home">
+                    <img class="brand-logo" src="images/logo%201.png" alt="" />
+                    <span class="brand-text">
+                        <span class="brand-name">Zenora</span>
+                        <span class="brand-tagline">Find Your Balance. Feel Your Peace</span>
+                    </span>
+                </a>
+                <p>A calm, welcoming yoga and meditation studio for every body and every level.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="instructors.html">Instructors</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Studio Hours</h4>
+                <ul class="footer-links plain">
+                    <li>Mon – Fri: 6:00 AM – 9:00 PM</li>
+                    <li>Saturday: 7:00 AM – 7:00 PM</li>
+                    <li>Sunday: 8:00 AM – 1:00 PM</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <ul class="footer-links plain">
+                    <li><i data-lucide="map-pin"></i> 24 Lotus Lane, Banjara Hills</li>
+                    <li><i data-lucide="phone"></i> +91 98765 43210</li>
+                    <li><i data-lucide="mail"></i> hello@zenora.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year">2026</span> Zenora. All rights reserved.</p>
+            <div class="legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Lucide icons (pinned version that includes social icons) -->
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <script src="service-detail.js"></script>
+</body>
+
+</html>

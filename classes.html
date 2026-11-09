@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes | Zenora Yoga & Meditation Studio</title>
+    <meta name="description"
+        content="Browse Zenora yoga, meditation and breathwork classes. Filter by level, view the weekly timetable and book your spot." />
+    <link rel="icon" type="image/png" href="images/logo%201.png" />
+
+    <!-- Apply saved theme + direction before paint (prevents flash) -->
+    <script>
+        try {
+            var t = localStorage.getItem("zenora-theme");
+            var d = localStorage.getItem("zenora-dir");
+            if (t === "dark") document.documentElement.setAttribute("data-theme", "dark");
+            if (d === "rtl") document.documentElement.setAttribute("dir", "rtl");
+        } catch (e) { }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="classes.css" />
+</head>
+
+<body>
+
+    <!-- ================= HEADER (3 equal-gap divs) ================= -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+
+            <!-- DIV 1: Logo + brand name + tagline -->
+            <div class="header-brand">
+                <a href="index.html" class="brand" aria-label="Zenora home">
+                    <img class="brand-logo" src="images/logo%201.png" alt="" />
+                    <span class="brand-text">
+                        <span class="brand-name">Zenora</span>
+                        <span class="brand-tagline">Find Your Balance. Feel Your Peace</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- DIV 2: Navigation links -->
+            <nav class="nav" id="nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li class="has-dropdown">
+                        <a href="index.html" aria-haspopup="true">Home <i data-lucide="chevron-down"
+                                class="dd-icon"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html">Home 1 <small>Classic</small></a></li>
+                            <li><a href="home-2.html">Home 2 <small>Premium</small></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="classes.html" class="active">Classes</a></li>
+                    <li><a href="instructors.html">Instructors</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-cta-item"><a href="login.html" class="btn btn-primary">Member Login</a></li>
+                </ul>
+            </nav>
+
+            <!-- DIV 3: Action buttons + the single CTA -->
+            <div class="header-actions">
+                <button class="icon-btn" id="rtlToggle" aria-label="Toggle right-to-left layout" title="RTL / LTR">
+                    <i data-lucide="arrow-left-right"></i>
+                </button>
+                <button class="icon-btn" id="themeToggle" aria-label="Toggle dark mode" title="Light / Dark">
+                    <i data-lucide="moon" class="icon-moon"></i>
+                    <i data-lucide="sun" class="icon-sun"></i>
+                </button>
+                <a href="login.html" class="btn btn-primary header-cta">Member Login</a>
+                <button class="icon-btn burger" id="burger" aria-label="Open menu" aria-expanded="false">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ================= 1. HERO (text panel + moving photo columns) ================= -->
+        <section class="cl-hero" id="top">
+            <span class="cl-blob cl-blob-1"></span>
+            <span class="cl-blob cl-blob-2"></span>
+
+            <div class="container cl-hero-inner">
+                <div class="cl-hero-copy">
+                    <span class="eyebrow cl-fade" style="--d:.1s">45+ Classes Every Week</span>
+                    <h1 class="cl-fade" style="--d:.2s">Find the class that <span class="cl-underline">fits your day.</span></h1>
+                    <p class="cl-hero-lead cl-fade" style="--d:.3s">
+                        From slow, restorative evenings to energising morning flows, explore every style and level,
+                        then reserve your spot in a few taps.
+                    </p>
+
+                    <div class="cl-quick cl-fade" style="--d:.4s">
+                        <span>Jump to a style</span>
+                        <div class="cl-quick-row">
+                            <button data-jump="yoga"><i data-lucide="flower-2"></i> Yoga</button>
+                            <button data-jump="meditation"><i data-lucide="brain"></i> Meditation</button>
+                            <button data-jump="breathwork"><i data-lucide="wind"></i> Breathwork</button>
+                        </div>
+                    </div>
+
+                    <div class="cl-hero-btns cl-fade" style="--d:.5s">
+                        <a href="#finder" class="btn btn-primary">Browse Classes <i data-lucide="arrow-down"></i></a>
+                        <a href="#timetable" class="btn btn-secondary">See Timetable</a>
+                    </div>
+
+                    <div class="cl-hero-stats cl-fade" style="--d:.6s">
+                        <div><strong>9</strong><span>Class styles</span></div>
+                        <div><strong>12</strong><span>Teachers</span></div>
+                        <div><strong>6am</strong><span>First class</span></div>
+                    </div>
+                </div>
+
+                <div class="cl-hero-reel" aria-hidden="true">
+                    <div class="cl-col cl-col-up">
+                        <div class="cl-track">
+                            <div class="cl-tile"><img src="./images/arm balance.jpg" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="./images/meditation1.jpg" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="./images/group.jpg" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="./images/power yoga.jpg" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="./images/yoga 1.jpg" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="./images/hatha yoga.jpg" alt="" onerror="this.style.display='none'" /></div>
+                        </div>
+                    </div>
+                    <div class="cl-col cl-col-down">
+                        <div class="cl-track">
+                            <div class="cl-tile"><img src="./images/yin yoga.jpg" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="./images/meditation.jpg" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="./images/yoga 3.jpg" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="./images/breath.jpg" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="https://images.pexels.com/photos/4534605/pexels-photo-4534605.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="./images/group class1.jpg" alt="" onerror="this.style.display='none'" /></div>
+                        </div>
+                    </div>
+                    <div class="cl-col cl-col-up cl-col-slow">
+                        <div class="cl-track">
+                            <div class="cl-tile"><img src="./images/wellness.jpg" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="https://images.pexels.com/photos/3822139/pexels-photo-3822139.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="./images/yoga flow.jpg" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="./images/hatha yoga.jpg" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="https://images.pexels.com/photos/3822139/pexels-photo-3822139.jpeg?auto=compress&cs=tinysrgb&w=700" alt="" onerror="this.style.display='none'" /></div>
+                            <div class="cl-tile"><img src="./images/astanga yoga.jpg" alt="" onerror="this.style.display='none'" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 2. CLASS FINDER ================= -->
+        <section class="section" id="finder">
+            <div class="container">
+                <div class="section-head cl-reveal">
+                    <span class="eyebrow">Class Finder</span>
+                    <h2>Search, filter and find your practice</h2>
+                    <p>Narrow by style and experience level, or simply search by name.</p>
+                </div>
+
+                <div class="cl-tools cl-reveal">
+                    <label class="cl-search">
+                        <i data-lucide="search"></i>
+                        <input type="search" id="clSearch" placeholder="Search classes, e.g. Yin" autocomplete="off" />
+                    </label>
+                    <div class="cl-chip-groups">
+                        <div class="cl-chips" id="levelChips" aria-label="Filter by level">
+                            <button class="cl-chip active" data-level="all">All Levels</button>
+                            <button class="cl-chip" data-level="beginner">Beginner</button>
+                            <button class="cl-chip" data-level="intermediate">Intermediate</button>
+                            <button class="cl-chip" data-level="advanced">Advanced</button>
+                        </div>
+                        <div class="cl-chips" id="typeChips" aria-label="Filter by type">
+                            <button class="cl-chip active" data-type="all">All Types</button>
+                            <button class="cl-chip" data-type="yoga">Yoga</button>
+                            <button class="cl-chip" data-type="meditation">Meditation</button>
+                            <button class="cl-chip" data-type="breathwork">Breathwork</button>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="cl-count" id="clCount" aria-live="polite"></p>
+
+                <div class="cl-grid" id="clGrid">
+
+                    <article class="cl-card" data-level="beginner" data-type="yoga" data-name="hatha yoga">
+                        <div class="cl-card-img">
+                            <img src="./images/hatha yoga.jpg" alt="Hatha yoga pose on a mat" loading="lazy" onerror="this.style.display='none'" />
+                            <span class="cl-tag">Beginner</span>
+                            <button class="cl-fav" aria-label="Save class"><i data-lucide="heart"></i></button>
+                        </div>
+                        <div class="cl-card-body">
+                            <h3>Hatha Yoga</h3>
+                            <p>Slow, steady poses that build strength, flexibility and body awareness.</p>
+                            <div class="cl-meta"><span><i data-lucide="clock"></i> 60 min</span><span><i data-lucide="users"></i> 12 spots</span><span><i data-lucide="user-round"></i> Aanya</span></div>
+                            <a href="#timetable" class="cl-book" data-class="Hatha Yoga">Book now <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="cl-card" data-level="intermediate" data-type="yoga" data-name="vinyasa flow">
+                        <div class="cl-card-img">
+                            <img src="https://images.pexels.com/photos/4534605/pexels-photo-4534605.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Vinyasa flow pose in a bright space" loading="lazy" onerror="this.style.display='none'" />
+                            <span class="cl-tag">Intermediate</span>
+                            <button class="cl-fav" aria-label="Save class"><i data-lucide="heart"></i></button>
+                        </div>
+                        <div class="cl-card-body">
+                            <h3>Vinyasa Flow</h3>
+                            <p>Breath-led movement linking poses in a fluid, energizing sequence.</p>
+                            <div class="cl-meta"><span><i data-lucide="clock"></i> 60 min</span><span><i data-lucide="users"></i> 14 spots</span><span><i data-lucide="user-round"></i> Kabir</span></div>
+                            <a href="#timetable" class="cl-book" data-class="Vinyasa Flow">Book now <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="cl-card" data-level="beginner" data-type="yoga" data-name="yin yoga">
+                        <div class="cl-card-img">
+                            <img src="./images/yin yoga.jpg" alt="Yoga mat and plants for yin yoga" loading="lazy" onerror="this.style.display='none'" />
+                            <span class="cl-tag">Beginner</span>
+                            <button class="cl-fav" aria-label="Save class"><i data-lucide="heart"></i></button>
+                        </div>
+                        <div class="cl-card-body">
+                            <h3>Yin Yoga</h3>
+                            <p>Long, supported holds that release deep tension and calm the nervous system.</p>
+                            <div class="cl-meta"><span><i data-lucide="clock"></i> 75 min</span><span><i data-lucide="users"></i> 12 spots</span><span><i data-lucide="user-round"></i> Aanya</span></div>
+                            <a href="#timetable" class="cl-book" data-class="Yin Yoga">Book now <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="cl-card" data-level="advanced" data-type="yoga" data-name="power yoga">
+                        <div class="cl-card-img">
+                            <img src="./images/power yoga.jpg" alt="Power yoga pose in a bright studio" loading="lazy" onerror="this.style.display='none'" />
+                            <span class="cl-tag">Advanced</span>
+                            <button class="cl-fav" aria-label="Save class"><i data-lucide="heart"></i></button>
+                        </div>
+                        <div class="cl-card-body">
+                            <h3>Power Yoga</h3>
+                            <p>A dynamic, strength-focused practice for experienced students.</p>
+                            <div class="cl-meta"><span><i data-lucide="clock"></i> 60 min</span><span><i data-lucide="users"></i> 10 spots</span><span><i data-lucide="user-round"></i> Kabir</span></div>
+                            <a href="#timetable" class="cl-book" data-class="Power Yoga">Book now <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="cl-card" data-level="beginner" data-type="meditation" data-name="mindful meditation">
+                        <div class="cl-card-img">
+                            <img src="./images/meditation1.jpg" alt="Quiet studio for guided meditation" loading="lazy" onerror="this.style.display='none'" />
+                            <span class="cl-tag">Beginner</span>
+                            <button class="cl-fav" aria-label="Save class"><i data-lucide="heart"></i></button>
+                        </div>
+                        <div class="cl-card-body">
+                            <h3>Mindful Meditation</h3>
+                            <p>Seated guided practice to clear the mind and cultivate lasting calm.</p>
+                            <div class="cl-meta"><span><i data-lucide="clock"></i> 45 min</span><span><i data-lucide="users"></i> 16 spots</span><span><i data-lucide="user-round"></i> Meera</span></div>
+                            <a href="#timetable" class="cl-book" data-class="Mindful Meditation">Book now <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="cl-card" data-level="intermediate" data-type="yoga" data-name="ashtanga basics">
+                        <div class="cl-card-img">
+                            <img src="./images/astanga yoga.jpg" alt="Ashtanga yoga practice" loading="lazy" style="object-position:center 25%" onerror="this.style.display='none'" />
+                            <span class="cl-tag">Intermediate</span>
+                            <button class="cl-fav" aria-label="Save class"><i data-lucide="heart"></i></button>
+                        </div>
+                        <div class="cl-card-body">
+                            <h3>Ashtanga Basics</h3>
+                            <p>A structured, disciplined sequence that builds focus and endurance.</p>
+                            <div class="cl-meta"><span><i data-lucide="clock"></i> 75 min</span><span><i data-lucide="users"></i> 10 spots</span><span><i data-lucide="user-round"></i> Rohan</span></div>
+                            <a href="#timetable" class="cl-book" data-class="Ashtanga Basics">Book now <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="cl-card" data-level="beginner" data-type="yoga" data-name="restorative evening">
+                        <div class="cl-card-img">
+                            <img src="https://images.pexels.com/photos/3822139/pexels-photo-3822139.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Restorative yoga in soft light" loading="lazy" onerror="this.style.display='none'" />
+                            <span class="cl-tag">Beginner</span>
+                            <button class="cl-fav" aria-label="Save class"><i data-lucide="heart"></i></button>
+                        </div>
+                        <div class="cl-card-body">
+                            <h3>Restorative Evening</h3>
+                            <p>Gentle, prop-supported poses to unwind after a long day and sleep deeply.</p>
+                            <div class="cl-meta"><span><i data-lucide="clock"></i> 60 min</span><span><i data-lucide="users"></i> 12 spots</span><span><i data-lucide="user-round"></i> Meera</span></div>
+                            <a href="#timetable" class="cl-book" data-class="Restorative Evening">Book now <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="cl-card" data-level="beginner" data-type="breathwork" data-name="breathwork basics pranayama">
+                        <div class="cl-card-img">
+                            <img src="./images/breath.jpg" alt="Calm space for breathwork" loading="lazy" style="object-position:center 70%" onerror="this.style.display='none'" />
+                            <span class="cl-tag">Beginner</span>
+                            <button class="cl-fav" aria-label="Save class"><i data-lucide="heart"></i></button>
+                        </div>
+                        <div class="cl-card-body">
+                            <h3>Breathwork Basics</h3>
+                            <p>Simple pranayama techniques to reduce stress and restore your energy.</p>
+                            <div class="cl-meta"><span><i data-lucide="clock"></i> 40 min</span><span><i data-lucide="users"></i> 16 spots</span><span><i data-lucide="user-round"></i> Meera</span></div>
+                            <a href="#timetable" class="cl-book" data-class="Breathwork Basics">Book now <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="cl-card" data-level="advanced" data-type="yoga" data-name="arm balance and inversions">
+                        <div class="cl-card-img">
+                            <img src="./images/arm balance.jpg" alt="Advanced arm balance practice" loading="lazy" style="object-position:center 30%" onerror="this.style.display='none'" />
+                            <span class="cl-tag">Advanced</span>
+                            <button class="cl-fav" aria-label="Save class"><i data-lucide="heart"></i></button>
+                        </div>
+                        <div class="cl-card-body">
+                            <h3>Arm Balance &amp; Inversions</h3>
+                            <p>Technique-driven workshop to safely explore handstands and arm balances.</p>
+                            <div class="cl-meta"><span><i data-lucide="clock"></i> 90 min</span><span><i data-lucide="users"></i> 8 spots</span><span><i data-lucide="user-round"></i> Rohan</span></div>
+                            <a href="#timetable" class="cl-book" data-class="Arm Balance & Inversions">Book now <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="cl-empty" id="clEmpty" hidden>
+                    <i data-lucide="search-x"></i>
+                    <h3>No classes match yet</h3>
+                    <p>Try a different level or type, or clear your search.</p>
+                    <button class="btn btn-secondary" id="clReset">Reset filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 3. WEEKLY TIMETABLE ================= -->
+        <section class="section alt" id="timetable">
+            <div class="container">
+                <div class="section-head cl-reveal">
+                    <span class="eyebrow">Weekly Timetable</span>
+                    <h2>Pick a day, reserve your spot</h2>
+                    <p>Live availability for every session. Tap Book to hold your place.</p>
+                </div>
+
+                <div class="cl-days cl-reveal" id="clDays" role="tablist" aria-label="Days of the week"></div>
+
+                <div class="cl-table cl-reveal" id="clTable" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- ================= 4. CHOOSE BY GOAL ================= -->
+        <section class="section" id="goals">
+            <div class="container">
+                <div class="section-head cl-reveal">
+                    <span class="eyebrow">Choose by Goal</span>
+                    <h2>What do you want to feel today?</h2>
+                    <p>Not sure where to begin? Start with how you want to feel and we will point you to the right class.</p>
+                </div>
+                <div class="cl-goals">
+                    <article class="cl-goal cl-reveal">
+                        <img src="https://unsplash.com/photos/bHEoayA42qg/download?force=true&w=900" alt="Calm yoga space for relaxation" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="cl-goal-shade"></div>
+                        <div class="cl-goal-content">
+                            <span class="cl-goal-icon"><i data-lucide="moon-star"></i></span>
+                            <h3>Relax &amp; Unwind</h3>
+                            <p>Yin, Restorative Evening and Breathwork to soften stress and sleep better.</p>
+                            <a href="#finder" class="cl-goal-link" data-goal="relax">View classes <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+                    <article class="cl-goal cl-reveal" style="--d:.12s">
+                        <img src="https://unsplash.com/photos/ETKSPU06AGI/download?force=true&w=900" alt="Strong yoga pose for strength" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="cl-goal-shade"></div>
+                        <div class="cl-goal-content">
+                            <span class="cl-goal-icon"><i data-lucide="dumbbell"></i></span>
+                            <h3>Build Strength</h3>
+                            <p>Power, Vinyasa and Ashtanga to build endurance, stability and heat.</p>
+                            <a href="#finder" class="cl-goal-link" data-goal="strength">View classes <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+                    <article class="cl-goal cl-reveal" style="--d:.24s">
+                        <img src="https://unsplash.com/photos/5Io0sH2XEdk/download?force=true&w=900" alt="Quiet studio for focus and meditation" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="cl-goal-shade"></div>
+                        <div class="cl-goal-content">
+                            <span class="cl-goal-icon"><i data-lucide="brain"></i></span>
+                            <h3>Focus &amp; Clarity</h3>
+                            <p>Mindful Meditation and Breathwork to quiet the mind and sharpen attention.</p>
+                            <a href="#finder" class="cl-goal-link" data-goal="focus">View classes <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 5. YOUR FIRST CLASS ================= -->
+        <section class="section alt" id="first-class">
+            <div class="container cl-first">
+                <div class="cl-first-text cl-reveal">
+                    <span class="eyebrow">Your First Class</span>
+                    <h2>New to Zenora? It is simpler than you think</h2>
+                    <p>We handle the details so you can simply show up and breathe. Here is how a first visit works.</p>
+
+                    <ol class="cl-steps">
+                        <li>
+                            <span class="cl-step-num">1</span>
+                            <div><h3>Choose a class</h3><p>Pick a beginner-friendly session from the finder or timetable.</p></div>
+                        </li>
+                        <li>
+                            <span class="cl-step-num">2</span>
+                            <div><h3>Reserve your spot</h3><p>Book online in seconds and receive an instant confirmation.</p></div>
+                        </li>
+                        <li>
+                            <span class="cl-step-num">3</span>
+                            <div><h3>Arrive 10 minutes early</h3><p>Meet your teacher, settle in and tell us about any injuries.</p></div>
+                        </li>
+                        <li>
+                            <span class="cl-step-num">4</span>
+                            <div><h3>Practice and unwind</h3><p>Mats, props and tea are on us. Just bring water and comfy clothes.</p></div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="cl-first-media cl-reveal" style="--d:.15s">
+                    <div class="cl-first-photo">
+                        <img src="./images/yoga 2.jpg" alt="Student practicing yoga at Zenora" loading="lazy" onerror="this.style.display='none'" />
+                    </div>
+                    <div class="cl-bring">
+                        <h4><i data-lucide="backpack"></i> What to bring</h4>
+                        <ul>
+                            <li><i data-lucide="check"></i> Water bottle</li>
+                            <li><i data-lucide="check"></i> Comfortable clothing</li>
+                            <li><i data-lucide="check"></i> Small towel (optional)</li>
+                            <li><i data-lucide="check"></i> An open mind</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 6. PASSES ================= -->
+        <section class="section" id="passes">
+            <div class="container">
+                <div class="section-head cl-reveal">
+                    <span class="eyebrow">Class Passes</span>
+                    <h2>Pay as you go or practice unlimited</h2>
+                    <p>Flexible ways to book every class you love.</p>
+                </div>
+                <div class="cl-passes">
+                    <article class="cl-pass cl-reveal">
+                        <span class="cl-pass-icon"><i data-lucide="ticket"></i></span>
+                        <h3>Drop-In</h3>
+                        <p class="cl-pass-desc">One class, no commitment</p>
+                        <div class="cl-price"><span>$</span>18<small>/ class</small></div>
+                        <ul>
+                            <li><i data-lucide="check"></i> Any group class</li>
+                            <li><i data-lucide="check"></i> Mat and props included</li>
+                            <li><i data-lucide="check"></i> Book up to 7 days ahead</li>
+                        </ul>
+                        <a href="membership.html" class="btn btn-secondary">Choose Pass</a>
+                    </article>
+                    <article class="cl-pass cl-pass-pop cl-reveal" style="--d:.12s">
+                        <span class="cl-pop">Best Value</span>
+                        <span class="cl-pass-icon"><i data-lucide="layers"></i></span>
+                        <h3>10-Class Pack</h3>
+                        <p class="cl-pass-desc">Valid for 3 months</p>
+                        <div class="cl-price"><span>$</span>140<small>/ pack</small></div>
+                        <ul>
+                            <li><i data-lucide="check"></i> Save $40 versus drop-in</li>
+                            <li><i data-lucide="check"></i> Share with a friend</li>
+                            <li><i data-lucide="check"></i> Track usage online</li>
+                        </ul>
+                        <a href="membership.html" class="btn btn-primary">Choose Pass</a>
+                    </article>
+                    <article class="cl-pass cl-reveal" style="--d:.24s">
+                        <span class="cl-pass-icon"><i data-lucide="infinity"></i></span>
+                        <h3>Unlimited</h3>
+                        <p class="cl-pass-desc">Every class, every month</p>
+                        <div class="cl-price"><span>$</span>95<small>/ month</small></div>
+                        <ul>
+                            <li><i data-lucide="check"></i> Unlimited group classes</li>
+                            <li><i data-lucide="check"></i> Priority slot booking</li>
+                            <li><i data-lucide="check"></i> 1 free guest pass monthly</li>
+                        </ul>
+                        <a href="membership.html" class="btn btn-secondary">Choose Pass</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 7. FAQ ================= -->
+        <section class="section alt" id="faq">
+            <div class="container cl-faq-wrap">
+                <div class="cl-faq-intro cl-reveal">
+                    <span class="eyebrow">Good to Know</span>
+                    <h2>Class questions, answered</h2>
+                    <p>Can not find what you need? Our team is happy to help at the studio or by email.</p>
+                    <a href="mailto:hello@zenora.com" class="btn btn-secondary"><i data-lucide="mail"></i> Email us</a>
+                </div>
+
+                <div class="cl-faq cl-reveal" style="--d:.12s" id="clFaq">
+                    <div class="cl-faq-item open">
+                        <button class="cl-faq-q" aria-expanded="true"><span>Do I need experience to join?</span><i data-lucide="plus"></i></button>
+                        <div class="cl-faq-a"><div><p>Not at all. Beginner classes are designed for first-timers, and every teacher offers modifications so you can work at your own pace.</p></div></div>
+                    </div>
+                    <div class="cl-faq-item">
+                        <button class="cl-faq-q" aria-expanded="false"><span>What is your cancellation policy?</span><i data-lucide="plus"></i></button>
+                        <div class="cl-faq-a"><div><p>You can cancel free of charge up to 4 hours before class. Later cancellations or no-shows use one class from your pack.</p></div></div>
+                    </div>
+                    <div class="cl-faq-item">
+                        <button class="cl-faq-q" aria-expanded="false"><span>Are mats and props provided?</span><i data-lucide="plus"></i></button>
+                        <div class="cl-faq-a"><div><p>Yes. We provide mats, blocks, straps and bolsters for every class. You are welcome to bring your own mat too.</p></div></div>
+                    </div>
+                    <div class="cl-faq-item">
+                        <button class="cl-faq-q" aria-expanded="false"><span>What if a class is full?</span><i data-lucide="plus"></i></button>
+                        <div class="cl-faq-a"><div><p>Join the waitlist from the timetable. If a spot opens you will be notified instantly and can confirm in one tap.</p></div></div>
+                    </div>
+                    <div class="cl-faq-item">
+                        <button class="cl-faq-q" aria-expanded="false"><span>Can I practice if I am injured or pregnant?</span><i data-lucide="plus"></i></button>
+                        <div class="cl-faq-a"><div><p>Often yes, with care. Please speak to your teacher before class so they can suggest safe adaptations, and check with your doctor first.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 8. CTA ================= -->
+        <section class="cl-cta" id="join">
+            <div class="container">
+                <div class="cl-cta-box cl-reveal">
+                    <span class="cl-cta-ring cl-cta-ring-1"></span>
+                    <span class="cl-cta-ring cl-cta-ring-2"></span>
+                    <div class="cl-cta-text">
+                        <h2>Ready to roll out your mat?</h2>
+                        <p>Log in to book classes, track your pack and manage your membership in one calm place.</p>
+                    </div>
+                    <div class="cl-cta-actions">
+                        <a href="login.html" class="btn btn-light">Member Login <i data-lucide="arrow-right" class="flip"></i></a>
+                        <a href="membership.html" class="btn btn-ghost">Become a Member</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Toast -->
+    <div class="cl-toast" id="clToast" role="status" aria-live="polite"><i data-lucide="check-circle-2"></i><span id="clToastMsg"></span></div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="brand" aria-label="Zenora home">
+                    <img class="brand-logo" src="images/logo%201.png" alt="" />
+                    <span class="brand-text">
+                        <span class="brand-name">Zenora</span>
+                        <span class="brand-tagline">Find Your Balance. Feel Your Peace</span>
+                    </span>
+                </a>
+                <p>A calm, welcoming yoga and meditation studio for every body and every level.</p>
+                <div class="socials">
+                    <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4>Explore</h4>
+                <ul class="footer-links">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="instructors.html">Instructors</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Studio Hours</h4>
+                <ul class="footer-links plain">
+                    <li>Mon – Fri: 6:00 AM – 9:00 PM</li>
+                    <li>Saturday: 7:00 AM – 7:00 PM</li>
+                    <li>Sunday: 8:00 AM – 1:00 PM</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <ul class="footer-links plain">
+                    <li><i data-lucide="map-pin"></i> 24 Lotus Lane, Banjara Hills</li>
+                    <li><i data-lucide="phone"></i> +91 98765 43210</li>
+                    <li><i data-lucide="mail"></i> hello@zenora.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year">2026</span> Zenora. All rights reserved.</p>
+            <div class="legal">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Lucide icons (pinned version that includes social icons) -->
+    <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <script src="classes.js"></script>
+</body>
+
+</html>

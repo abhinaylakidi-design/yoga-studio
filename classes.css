@@ -609,26 +609,7 @@ svg.lucide {
 }
 
 .cl-underline::after {
-    content: "";
-    position: absolute;
-    inset-inline: 0;
-    bottom: .02em;
-    height: .12em;
-    border-radius: 10px;
-    background: var(--secondary);
-    transform: scaleX(0);
-    transform-origin: left;
-    animation: clLine 1s var(--ease) 1s forwards;
-}
-
-[dir="rtl"] .cl-underline::after {
-    transform-origin: right;
-}
-
-@keyframes clLine {
-    to {
-        transform: scaleX(1);
-    }
+    content: none;
 }
 
 .cl-hero-lead {

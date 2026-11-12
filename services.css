@@ -610,26 +610,7 @@ svg.lucide {
 }
 
 .sv-accent::after {
-    content: "";
-    position: absolute;
-    inset-inline: 0;
-    bottom: .02em;
-    height: .12em;
-    border-radius: 10px;
-    background: var(--secondary);
-    transform: scaleX(0);
-    transform-origin: left;
-    animation: svLine 1s var(--ease) 1s forwards;
-}
-
-[dir="rtl"] .sv-accent::after {
-    transform-origin: right;
-}
-
-@keyframes svLine {
-    to {
-        transform: scaleX(1);
-    }
+    content: none;
 }
 
 .sv-lead {

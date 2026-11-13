@@ -325,7 +325,63 @@
             </div>
         </section>
 
+        <!-- ================= 3. WEEKLY TIMETABLE ================= -->
+        <section class="section alt" id="timetable">
+            <div class="container">
+                <div class="section-head cl-reveal">
+                    <span class="eyebrow">Weekly Timetable</span>
+                    <h2>Pick a day, reserve your spot</h2>
+                    <p>Live availability for every session. Tap Book to hold your place.</p>
+                </div>
 
+                <div class="cl-days cl-reveal" id="clDays" role="tablist" aria-label="Days of the week"></div>
+
+                <div class="cl-table cl-reveal" id="clTable" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- ================= 4. CHOOSE BY GOAL ================= -->
+        <section class="section" id="goals">
+            <div class="container">
+                <div class="section-head cl-reveal">
+                    <span class="eyebrow">Choose by Goal</span>
+                    <h2>What do you want to feel today?</h2>
+                    <p>Not sure where to begin? Start with how you want to feel and we will point you to the right class.</p>
+                </div>
+                <div class="cl-goals">
+                    <article class="cl-goal cl-reveal">
+                        <img src="./images/relax.jpg" alt="Calm yoga space for relaxation" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="cl-goal-shade"></div>
+                        <div class="cl-goal-content">
+                            <span class="cl-goal-icon"><i data-lucide="moon-star"></i></span>
+                            <h3>Relax &amp; Unwind</h3>
+                            <p>Yin, Restorative Evening and Breathwork to soften stress and sleep better.</p>
+                            <a href="#finder" class="cl-goal-link" data-goal="relax">View classes <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+                    <article class="cl-goal cl-reveal" style="--d:.12s">
+                        <img src="./images/buildstrength.jpg" alt="Strong yoga pose for strength" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="cl-goal-shade"></div>
+                        <div class="cl-goal-content">
+                            <span class="cl-goal-icon"><i data-lucide="dumbbell"></i></span>
+                            <h3>Build Strength</h3>
+                            <p>Power, Vinyasa and Ashtanga to build endurance, stability and heat.</p>
+                            <a href="#finder" class="cl-goal-link" data-goal="strength">View classes <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+                    <article class="cl-goal cl-reveal" style="--d:.24s">
+                        <img src="./images/focus.jpg" alt="Quiet studio for focus and meditation" loading="lazy" onerror="this.style.display='none'" />
+                        <div class="cl-goal-shade"></div>
+                        <div class="cl-goal-content">
+                            <span class="cl-goal-icon"><i data-lucide="brain"></i></span>
+                            <h3>Focus &amp; Clarity</h3>
+                            <p>Mindful Meditation and Breathwork to quiet the mind and sharpen attention.</p>
+                            <a href="#finder" class="cl-goal-link" data-goal="focus">View classes <i data-lucide="arrow-right" class="flip"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
         <!-- ================= 5. YOUR FIRST CLASS ================= -->
         <section class="section alt" id="first-class">
@@ -422,41 +478,7 @@
             </div>
         </section>
 
-        <!-- ================= 7. FAQ ================= -->
-        <section class="section alt" id="faq">
-            <div class="container cl-faq-wrap">
-                <div class="cl-faq-intro cl-reveal">
-                    <span class="eyebrow">Good to Know</span>
-                    <h2>Class questions, answered</h2>
-                    <p>Can not find what you need? Our team is happy to help at the studio or by email.</p>
-                    <a href="mailto:hello@zenora.com" class="btn btn-secondary"><i data-lucide="mail"></i> Email us</a>
-                </div>
-
-                <div class="cl-faq cl-reveal" style="--d:.12s" id="clFaq">
-                    <div class="cl-faq-item open">
-                        <button class="cl-faq-q" aria-expanded="true"><span>Do I need experience to join?</span><i data-lucide="plus"></i></button>
-                        <div class="cl-faq-a"><div><p>Not at all. Beginner classes are designed for first-timers, and every teacher offers modifications so you can work at your own pace.</p></div></div>
-                    </div>
-                    <div class="cl-faq-item">
-                        <button class="cl-faq-q" aria-expanded="false"><span>What is your cancellation policy?</span><i data-lucide="plus"></i></button>
-                        <div class="cl-faq-a"><div><p>You can cancel free of charge up to 4 hours before class. Later cancellations or no-shows use one class from your pack.</p></div></div>
-                    </div>
-                    <div class="cl-faq-item">
-                        <button class="cl-faq-q" aria-expanded="false"><span>Are mats and props provided?</span><i data-lucide="plus"></i></button>
-                        <div class="cl-faq-a"><div><p>Yes. We provide mats, blocks, straps and bolsters for every class. You are welcome to bring your own mat too.</p></div></div>
-                    </div>
-                    <div class="cl-faq-item">
-                        <button class="cl-faq-q" aria-expanded="false"><span>What if a class is full?</span><i data-lucide="plus"></i></button>
-                        <div class="cl-faq-a"><div><p>Join the waitlist from the timetable. If a spot opens you will be notified instantly and can confirm in one tap.</p></div></div>
-                    </div>
-                    <div class="cl-faq-item">
-                        <button class="cl-faq-q" aria-expanded="false"><span>Can I practice if I am injured or pregnant?</span><i data-lucide="plus"></i></button>
-                        <div class="cl-faq-a"><div><p>Often yes, with care. Please speak to your teacher before class so they can suggest safe adaptations, and check with your doctor first.</p></div></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+       
         <!-- ================= 8. CTA ================= -->
         <section class="cl-cta" id="join">
             <div class="container">

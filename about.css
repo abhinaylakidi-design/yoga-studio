@@ -1375,7 +1375,7 @@ svg.lucide {
 /* ---------- 8. CTA ---------- */
 .ab-cta {
     position: relative;
-    padding: clamp(80px, 10vw, 130px) 0;
+    padding: clamp(36px, 5vw, 60px) 0;
     overflow: hidden;
     isolation: isolate;
     background: #24382D;
@@ -1409,8 +1409,8 @@ svg.lucide {
 .ab-cta-card {
     max-width: 760px;
     text-align: center;
-    padding: clamp(36px, 5vw, 64px);
-    border-radius: 32px;
+    padding: clamp(18px, 2.6vw, 30px);
+    border-radius: 28px;
     color: #fff;
     background: rgba(255, 255, 255, .1);
     border: 1px solid rgba(255, 255, 255, .25);

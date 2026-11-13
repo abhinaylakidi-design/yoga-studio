@@ -1725,7 +1725,7 @@ svg.lucide {
 /* ---------- 8. CTA ---------- */
 .mb-cta {
     position: relative;
-    padding: clamp(80px, 10vw, 130px) 0;
+    padding: clamp(28px, 4vw, 48px) 0;
     overflow: hidden;
     isolation: isolate;
     background: #24382D;
@@ -1769,8 +1769,8 @@ svg.lucide {
 .mb-cta-card {
     max-width: 760px;
     text-align: center;
-    padding: clamp(36px, 5vw, 64px);
-    border-radius: 32px;
+    padding: clamp(18px, 2.4vw, 26px);
+    border-radius: 24px;
     color: #fff;
     background: rgba(255, 255, 255, .1);
     border: 1px solid rgba(255, 255, 255, .25);
@@ -1810,12 +1810,12 @@ svg.lucide {
 
 .mb-cta-card h2 {
     color: #fff;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
 }
 
 .mb-cta-card p {
     color: rgba(255, 255, 255, .86);
-    margin-bottom: 28px;
+    margin-bottom: 20px;
     max-width: 520px;
 }
 

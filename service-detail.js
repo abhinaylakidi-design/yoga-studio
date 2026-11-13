@@ -418,7 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* CTA */
     const ctaImg = $("sdCtaImg");
-    ctaImg.src = S.third(900);
+    ctaImg.src = S.hero;
     ctaImg.alt = `${S.name} at Zenora`;
     $("sdCtaIcon").setAttribute("data-lucide", S.icon);
     setText("sdCtaTitle", S.ctaTitle);
